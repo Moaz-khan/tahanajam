@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const workData = [
@@ -31,9 +32,11 @@ function Work() {
               <div
                 key={index}
                 className={`relative w-full ${sizeClass} bg-white shadow-lg flex items-center justify-center overflow-hidden`}>
-                <img
+                <Image
                   src={work.image}
                   alt={work.title}
+                  width={500}
+                  height={500}
                   className="absolute inset-0 w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
