@@ -29,11 +29,27 @@ const comments = [
   },
 ];
 
-const backgroundImage = "/images/qoute2.png";
+const bgDesktop = "/images/qoute2.png"; // High-quality for large screens
+const bgMobile = "/images/qoute2.png"; // Compressed for mobile
 
 function TopComments() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [fade, setFade] = useState(true);
+  const [bgImage, setBgImage] = useState(bgDesktop);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setBgImage(bgMobile); // Use smaller image on mobile
+      } else {
+        setBgImage(bgDesktop);
+      }
+    };
+
+    handleResize(); // Run on mount
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -50,14 +66,18 @@ function TopComments() {
     <section className="py-12 bg-black flex justify-center px-4">
       <div className="container mx-auto flex flex-col items-center">
         <div
-          className={`w-full max-w-[1100px] sm:h-[350px] md:h-[400px] lg:h-[450px] shadow-lg rounded-xl p-6 flex items-center justify-center text-center transition-opacity duration-500 relative overflow-hidden ${
+          className={`relative w-full max-w-[1100px] min-h-[250px] sm:min-h-[350px] md:min-h-[400px] lg:min-h-[450px] shadow-lg rounded-xl flex items-center justify-center text-center transition-opacity duration-500 overflow-hidden ${
             fade ? "opacity-100" : "opacity-0"
-          }`}
-          style={{
-            backgroundImage: `url(${backgroundImage})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}>
+          }`}>
+          {/* Background Image Full Cover Fix */}
+          <div className="absolute inset-0">
+            <img
+              src={bgImage}
+              alt="Background"
+              className="w-full h-full object-cover md:object-cover sm:object-cover"
+            />
+          </div>
+
           {/* Background Overlay */}
           <div className="absolute inset-0 bg-black bg-opacity-60"></div>
 
