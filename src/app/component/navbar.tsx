@@ -20,17 +20,17 @@ const Navbar = () => {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center text-base">
           <Link
-            href="#work"
+            href="/work"
             className="mr-5 text-lg hover:text-gray-600 duration-300">
             Work
           </Link>
           <Link
-            href="/"
+            href="/about"
             className="mr-5 text-lg hover:text-gray-600 duration-300">
             About
           </Link>
           <Link
-            href="/"
+            href="/contact"
             className="mr-5 text-lg hover:text-gray-600 duration-300">
             Contact
           </Link>
@@ -62,19 +62,19 @@ const Navbar = () => {
 
         <nav className="flex flex-col items-center mt-16 space-y-6">
           <Link
-            href="#work"
+            href="/work"
             onClick={() => setIsOpen(false)}
             className="text-lg hover:text-gray-600">
             Work
           </Link>
           <Link
-            href="/"
+            href="/about"
             onClick={() => setIsOpen(false)}
             className="text-lg hover:text-gray-600">
             About
           </Link>
           <Link
-            href="/"
+            href="/contact"
             onClick={() => setIsOpen(false)}
             className="text-lg hover:text-gray-600">
             Contact

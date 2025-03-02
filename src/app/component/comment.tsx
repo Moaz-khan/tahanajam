@@ -1,49 +1,44 @@
 "use client";
+import Image from "next/image";
 import React, { useState, useEffect } from "react";
 
-const comments = [
-  {
-    name: "Elena S.",
-    role: "Marketing Director of Coinio",
-    text: "Incredible work from Taha! He understood our vision from the get-go and translated it into a stunning brand identity and website design. His professionalism and prompt communication made the entire process seamless.",
-  },
-  {
-    name: "Henry W.",
-    role: "Team member of Sole Crafters",
-    text: "Opting for our exclusive website design was a game-changer. His unique designs elevated our brand, captivating our audience with sophistication.",
-  },
-  {
-    name: "Layla A.",
-    role: "Founder of The Nectar",
-    text: "Kudos to Taha for his exceptional label design work! He captured the essence of our brand effortlessly, delivering labels that are both visually appealing and informative.",
-  },
-  {
-    name: "Adam B.",
-    role: "Co-founder, Morphosys",
-    text: "Selecting a design partner for our branding and website needs was pivotal. He delivered stunning designs that resonate with our customers.",
-  },
-  {
-    name: "Yılmaz F.",
-    role: "Founder, Oven Delights",
-    text: "Thanks to Taha, our bakery's new branding and logo are simply irresistible! His creativity and precision brought our vision to life.",
-  },
-];
+interface Comment {
+  name: string;
+  role: string;
+  text: string;
+}
 
 const bgDesktop = "/images/qoute2.png"; // High-quality for large screens
-const bgMobile = "/images/qoute2.png"; // Compressed for mobile
+const bgMobile = "/images/qoute2-min.png"; // Compressed for mobile
 
 function TopComments() {
+  const [comments, setComments] = useState<Comment[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [fade, setFade] = useState(true);
   const [bgImage, setBgImage] = useState(bgDesktop);
 
+  // ✅ Fetch comments from API
+  useEffect(() => {
+    const fetchComments = async () => {
+      try {
+        const res = await fetch(
+          `${process.env.NEXT_PUBLIC_API_BASE_URL}/comments`,
+        );
+        if (!res.ok) throw new Error("Failed to fetch comments");
+        const data: Comment[] = await res.json();
+        setComments(data);
+      } catch (error) {
+        console.error("Error fetching comments:", error);
+      }
+    };
+
+    fetchComments();
+  }, []);
+
+  // ✅ Handle Background Image on Resize
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 768) {
-        setBgImage(bgMobile); // Use smaller image on mobile
-      } else {
-        setBgImage(bgDesktop);
-      }
+      setBgImage(window.innerWidth < 768 ? bgMobile : bgDesktop);
     };
 
     handleResize(); // Run on mount
@@ -51,7 +46,10 @@ function TopComments() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // ✅ Auto-Sliding Comments
   useEffect(() => {
+    if (comments.length === 0) return;
+
     const interval = setInterval(() => {
       setFade(false);
       setTimeout(() => {
@@ -59,8 +57,13 @@ function TopComments() {
         setFade(true);
       }, 500);
     }, 7000);
+
     return () => clearInterval(interval);
-  }, []);
+  }, [comments]);
+
+  if (comments.length === 0) {
+    return <p className="text-white text-center">Loading comments...</p>;
+  }
 
   return (
     <section className="py-12 bg-black flex justify-center px-4">
@@ -71,10 +74,12 @@ function TopComments() {
           }`}>
           {/* Background Image Full Cover Fix */}
           <div className="absolute inset-0">
-            <img
+            <Image
               src={bgImage}
               alt="Background"
-              className="w-full h-full object-cover md:object-cover sm:object-cover"
+              width={500}
+              height={500}
+              className="w-full h-full object-cover md:object-cover sm:object-contain"
             />
           </div>
 
