@@ -8,7 +8,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="bg-black text-white body-font">
+    <header className="bg-black text-white body-font relative">
       <div className="container mx-auto flex justify-between items-center p-5 px-6 md:px-16">
         {/* Logo Left Side */}
         <Link
@@ -49,9 +49,9 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Menu - Right Side Slide In */}
+      {/* Mobile Menu - Full Page Overlay */}
       <div
-        className={`fixed top-0 right-0 w-64 h-full bg-black text-white shadow-lg transform ${
+        className={`fixed inset-0 bg-black bg-opacity-90 z-50 flex flex-col items-center justify-center transform ${
           isOpen ? "translate-x-0" : "translate-x-full"
         } transition-transform duration-300 ease-in-out md:hidden`}>
         <button
@@ -60,29 +60,29 @@ const Navbar = () => {
           <X size={28} />
         </button>
 
-        <nav className="flex flex-col items-center mt-16 space-y-6">
+        <nav className="flex flex-col items-center space-y-6 text-white text-xl">
           <Link
             href="/work"
             onClick={() => setIsOpen(false)}
-            className="text-lg hover:text-gray-600">
+            className="hover:text-gray-400">
             Work
           </Link>
           <Link
             href="/about"
             onClick={() => setIsOpen(false)}
-            className="text-lg hover:text-gray-600">
+            className="hover:text-gray-400">
             About
           </Link>
           <Link
             href="/contact"
             onClick={() => setIsOpen(false)}
-            className="text-lg hover:text-gray-600">
+            className="hover:text-gray-400">
             Contact
           </Link>
           <Link
             href="/"
             onClick={() => setIsOpen(false)}
-            className="text-lg hover:text-gray-600">
+            className="hover:text-gray-400">
             Blog
           </Link>
         </nav>

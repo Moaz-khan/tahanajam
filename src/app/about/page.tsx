@@ -10,8 +10,8 @@ const ScrollEffect = dynamic(() => import("../component/ScrollEffect"), {
 
 export default function Page() {
   return (
-    <ScrollEffect>
-      <div className="bg-black text-white min-h-screen">
+    <div className="bg-black text-white min-h-screen">
+      <ScrollEffect>
         <div className="p-10 sm:p-16 md:p-20">
           <h1 className="text-6xl sm:text-5xl md:text-6xl lg:text-8xl font-bold">{`I'm Taha`}</h1>
           <p className="text-lg sm:text-base md:text-xl lg:text-2xl font-thin pt-6 sm:pt-4 md:pt-6">
@@ -97,7 +97,7 @@ export default function Page() {
             </div>
           </div>
         </div>
-      </div>
-    </ScrollEffect>
+      </ScrollEffect>
+    </div>
   );
 }

@@ -9,7 +9,7 @@ const ScrollEffect = dynamic(() => import("./component/ScrollEffect"), {
 
 export default function Home() {
   return (
-    <div>
+    <div className="bg-black">
       <ScrollEffect>
         <Hero />
       </ScrollEffect>

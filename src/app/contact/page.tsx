@@ -13,8 +13,8 @@ const ScrollEffect = dynamic(() => import("../component/ScrollEffect"), {
 
 function Page() {
   return (
-    <ScrollEffect>
-      <div className="text-start px-6 sm:px-10 lg:px-16 py-10 bg-black text-white h-auto min-h-screen flex flex-col justify-center">
+    <div className="text-start px-6 sm:px-10 lg:px-16 py-10 bg-black text-white h-auto min-h-screen flex flex-col justify-center">
+      <ScrollEffect>
         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
           {`Reach Out`}
         </h1>
@@ -34,8 +34,8 @@ function Page() {
             {`hello@tahanajam.co`}
           </Link>
         </div>
-      </div>
-    </ScrollEffect>
+      </ScrollEffect>
+    </div>
   );
 }
 
