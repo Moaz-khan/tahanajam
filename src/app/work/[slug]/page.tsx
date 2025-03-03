@@ -163,8 +163,8 @@ export default function WorkDetailPage() {
   }
 
   return (
-    <ScrollEffect>
-      <section className="py-12 flex justify-center bg-black text-white">
+    <section className="py-12 flex justify-center bg-black text-white">
+      <ScrollEffect>
         <div className="container mx-auto px-4 flex flex-col">
           <div className="flex flex-col lg:flex-row justify-between mb-12 gap-6">
             <div className="lg:w-1/2">
@@ -210,7 +210,7 @@ export default function WorkDetailPage() {
             </div>
           )}
         </div>
-      </section>
-    </ScrollEffect>
+      </ScrollEffect>
+    </section>
   );
 }
