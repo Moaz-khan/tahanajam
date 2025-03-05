@@ -13,13 +13,13 @@ const workData = [
     title: "Fynix™",
     slug: "fynix",
     Projecttype: "Complete Branding | Marketing Design",
-    image: "/images/work1.jpeg",
+    image: "/images/Fynix/Cover.jpg",
   },
   {
     title: "COINIO",
     slug: "coinio",
     Projecttype: "Branding | Logo Design",
-    image: "/images/work2.jpeg",
+    image: "/images/Coinie/Logo-design.png",
   },
   {
     title: "Sole Crafters",
@@ -89,8 +89,8 @@ function Work() {
                   <Image
                     src={work.image}
                     alt={work.title}
-                    width={500}
-                    height={500}
+                    width={1200}
+                    height={800}
                     className="absolute inset-0 w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity flex-col items-center justify-center">

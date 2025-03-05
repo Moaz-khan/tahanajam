@@ -28,8 +28,15 @@ const workDetails: Record<
     description: `Fynix Gym lacked a strong brand identity and marketing strategy, making it difficult to attract and retain members. They needed a cohesive, professional look that resonated with both men and women.
 
 I developed a complete branding solution, including a powerful logo, a balanced color scheme, and marketing assets like business cards, posters, and billboards. This transformation gave Fynix Gym a bold and consistent presence, strengthening its impact in the fitness industry.`,
-    mainImage: "/images/work1.jpeg",
-    designs: ["/images/work1.jpeg", "/images/work1.jpeg", "/images/work1.jpeg"],
+    mainImage: "/images/Fynix/Cover.jpg",
+    designs: [
+      "/images/Fynix/fynix1.jpg",
+      "/images/Fynix/fynix2.jpg",
+      "/images/Fynix/fynix3.jpg",
+      "/images/Fynix/fynix4.jpg",
+      "/images/Fynix/fynix.jpg",
+      "/images/Fynix/fynix5.jpg",
+    ],
   },
   coinio: {
     title: "COINIO",
@@ -39,8 +46,15 @@ I developed a complete branding solution, including a powerful logo, a balanced 
     },
     description:
       "COINIO is an exciting new project that has recently been launched. Myr focus is on creating a unique brand identity and feel for this crypto exchange brand. With expertise and experience, we are confident that COINIO will stand out in the competitive world of cryptocurrency.",
-    mainImage: "/images/work2.jpeg",
-    designs: ["/images/work2.jpeg", "/images/work2.jpeg", "/images/work2.jpeg"],
+    mainImage: "/images/Coinie/Logo-design.png",
+    designs: [
+      "/images/Coinie/coinie1.jpg",
+      "/images/Coinie/coinie2.jpg",
+      "/images/Coinie/coinie3.jpg",
+      "/images/Coinie/coinie4.jpg",
+      "/images/Coinie/coinie5.jpg",
+      "/images/Coinie/coinie6.jpg",
+    ],
   },
   solecrafters: {
     title: "Sole Crafters",
@@ -189,8 +203,8 @@ export default function WorkDetailPage() {
                 src={image}
                 alt={`Design ${index + 1}`}
                 width={1200}
-                height={600}
-                className="w-full h-[600px] object-cover rounded-lg shadow-lg"
+                height={700}
+                className="w-full h-[700px] object-cover rounded-lg shadow-lg"
               />
             ))}
           </div>
