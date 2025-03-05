@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,34 +12,26 @@ const Navbar = () => {
     <header className="bg-black text-white body-font relative">
       <div className="container mx-auto flex justify-between items-center p-5 px-6 md:px-16">
         {/* Logo Left Side */}
-        <Link
-          href="/"
-          className="text-2xl font-medium hover:text-gray-600 duration-300">
-          Taha Najam
+        <Link href="/" className="flex-shrink-0">
+          <Image
+            src="/images/logo.png"
+            alt="tahanajam"
+            width={300}
+            height={80}
+            className="h-auto max-w-[150px] md:max-w-[200px]"
+          />
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center text-base">
-          <Link
-            href="/work"
-            className="mr-5 text-lg hover:text-gray-600 duration-300">
-            Work
-          </Link>
-          <Link
-            href="/about"
-            className="mr-5 text-lg hover:text-gray-600 duration-300">
-            About
-          </Link>
-          <Link
-            href="/contact"
-            className="mr-5 text-lg hover:text-gray-600 duration-300">
-            Contact
-          </Link>
-          <Link
-            href="/"
-            className="mr-5 text-lg hover:text-gray-600 duration-300">
-            Blog
-          </Link>
+          {["Work", "About", "Contact", "Blog"].map((item) => (
+            <Link
+              key={item}
+              href={`/${item.toLowerCase()}`}
+              className="mr-5 text-lg hover:text-gray-600 duration-300">
+              {item}
+            </Link>
+          ))}
         </nav>
 
         {/* Mobile Menu Button - Right Side */}
@@ -61,30 +54,15 @@ const Navbar = () => {
         </button>
 
         <nav className="flex flex-col items-center space-y-6 text-white text-xl">
-          <Link
-            href="/work"
-            onClick={() => setIsOpen(false)}
-            className="hover:text-gray-400">
-            Work
-          </Link>
-          <Link
-            href="/about"
-            onClick={() => setIsOpen(false)}
-            className="hover:text-gray-400">
-            About
-          </Link>
-          <Link
-            href="/contact"
-            onClick={() => setIsOpen(false)}
-            className="hover:text-gray-400">
-            Contact
-          </Link>
-          <Link
-            href="/"
-            onClick={() => setIsOpen(false)}
-            className="hover:text-gray-400">
-            Blog
-          </Link>
+          {["Work", "About", "Contact", "Blog"].map((item) => (
+            <Link
+              key={item}
+              href={`/${item.toLowerCase()}`}
+              onClick={() => setIsOpen(false)}
+              className="hover:text-gray-400">
+              {item}
+            </Link>
+          ))}
         </nav>
       </div>
     </header>
