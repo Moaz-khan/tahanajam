@@ -1,115 +1,166 @@
-"use client";
-
-import Image from "next/image";
+import { LayoutGrid } from "@/components/ui/layout-grid";
 import Link from "next/link";
-import dynamic from "next/dynamic";
 
-const ScrollEffect = dynamic(() => import("../component/ScrollEffect"), {
-  ssr: false,
-});
+interface SkeletonProps {
+  title: string;
+  projectType: string;
+  slug: string;
+}
 
-const workData = [
+const SkeletonOne: React.FC<SkeletonProps> = ({ title, projectType, slug }) => {
+  return (
+    <div>
+      <Link href={`/work/${slug}`}>
+        <p className="font-bold md:text-4xl text-xl text-white">{title}</p>
+        <p className="font-normal text-base text-white">{projectType}</p>
+      </Link>
+    </div>
+  );
+};
+
+const cards = [
   {
+    id: 1,
     title: "Fynix™",
     slug: "fynix",
-    Projecttype: "Complete Branding | Marketing Design",
+    projectType: "Complete Branding | Marketing Design",
     image: "/images/Fynix/Cover.jpg",
+    className:
+      "col-span-1 sm:col-span-1 md:col-span-2 h-[300px] sm:h-[350px] md:h-[400px]",
+    thumbnail: "/images/Fynix/Cover.jpg",
+    content: (
+      <SkeletonOne
+        title="Fynix™"
+        projectType="Complete Branding | Marketing Design"
+        slug="fynix"
+      />
+    ),
   },
   {
+    id: 2,
     title: "COINIO",
     slug: "coinio",
-    Projecttype: "Branding | Logo Design",
+    projectType: "Brand Identity | Logo Design",
     image: "/images/Coinie/Logo-design.png",
+    className:
+      "col-span-1 sm:col-span-1 md:col-span-1 h-[300px] sm:h-[350px] md:h-[400px]",
+    thumbnail: "/images/Coinie/Logo-design.png",
+    content: (
+      <SkeletonOne
+        title="COINIO"
+        projectType="Brand Identity | Logo Design"
+        slug="coinio"
+      />
+    ),
   },
   {
-    title: "Sole Crafters",
-    slug: "solecrafters",
-    Projecttype: "Website design",
-    image: "/images/work3.jpeg",
-  },
-  {
-    title: "Email Design Portfolio",
-    slug: "emaildesignportfolio",
-    Projecttype: "Email Design",
-    image: "/images/work4.jpeg",
-  },
-  {
+    id: 3,
     title: "Oven Delights",
     slug: "ovendelights",
-    Projecttype: "Logo | Branding | Social Media Design",
+    projectType: "Logo | Branding | Photography",
     image: "/images/work1.jpeg",
+    className:
+      "col-span-1 sm:col-span-1 md:col-span-1 h-[300px] sm:h-[350px] md:h-[400px]",
+    thumbnail: "/images/Oven delights/Cover.jpg",
+    content: (
+      <SkeletonOne
+        title="Oven Delights"
+        projectType="Logo | Branding | Photography"
+        slug="ovendelights"
+      />
+    ),
   },
   {
+    id: 4,
+    title: "Email Design Portfolio",
+    slug: "emaildesignportfolio",
+    projectType: "Email Design",
+    image: "/images/work4.jpeg",
+    className:
+      "col-span-1 sm:col-span-1 md:col-span-2 h-[300px] sm:h-[350px] md:h-[400px]",
+    thumbnail: "/images/Email Designs/Cover.jpg",
+    content: (
+      <SkeletonOne
+        title="Email Design Portfolio"
+        projectType="Email Design"
+        slug="emaildesignportfolio"
+      />
+    ),
+  },
+  {
+    id: 5,
     title: "Morphosys ©",
     slug: "morphosys",
-    Projecttype: "Branding | Website design",
-    image: "/images/work2.jpeg",
+    projectType: "Branding | Website design",
+    image: "/images/Morphysis/Cover.png",
+    className:
+      "col-span-1 sm:col-span-1 md:col-span-2 h-[300px] sm:h-[350px] md:h-[400px]",
+    thumbnail: "/images/Morphysis/Cover.png",
+    content: (
+      <SkeletonOne
+        title="Morphosys ©"
+        projectType="Branding | Website design"
+        slug="morphosys"
+      />
+    ),
   },
   {
+    id: 6,
     title: "AL Samyah | Company Profile",
     slug: "ascp",
-    Projecttype: "Company Profile",
-    image: "/images/work3.jpeg",
+    projectType: "Company Profile",
+    image: "/images/Al Samaya/Cover.jpg",
+    className:
+      "col-span-1 sm:col-span-1 md:col-span-1 h-[300px] sm:h-[350px] md:h-[400px]",
+    thumbnail: "/images/Al Samaya/Cover.jpg",
+    content: (
+      <SkeletonOne
+        title="AL Samyah | Company Profile"
+        projectType="Company Profile"
+        slug="ascp"
+      />
+    ),
   },
   {
-    title: "Nectar",
-    slug: "nectar",
-    Projecttype: "Label Designs",
-    image: "/images/work4.jpeg",
-  },
-  {
-    title: "Inhance Jeweles",
-    slug: "inhancejeweles",
-    Projecttype: "Branding | Packaging Design",
-    image: "/images/work1.jpeg",
-  },
-  {
-    title: "Peugeot Pitch Deck",
-    slug: "peugeot",
-    Projecttype: "Digital Designer | Motion Designer",
-    image: "/images/work2.jpeg",
-  },
-  {
+    id: 8,
     title: "AL THUNAYAN GROUP",
     slug: "althunayan",
-    Projecttype: "Company Profile Design",
-    image: "/images/work3.jpeg",
+    projectType: "Company Profile Design",
+    image: "/images/Al Thinayan/Cover.jpg",
+    className:
+      "col-span-1 sm:col-span-1 md:col-span-1 h-[300px] sm:h-[350px] md:h-[400px]",
+    thumbnail: "/images/Al Thunayan/Cover.jpg",
+    content: (
+      <SkeletonOne
+        title="AL THUNAYAN GROUP"
+        projectType="Company Profile Design"
+        slug="althunayan"
+      />
+    ),
+  },
+  {
+    id: 7,
+    title: "Inhance Jeweles",
+    slug: "inhancejeweles",
+    projectType: "Branding | Packaging Design",
+    image: "/images/Inhance/main.jpg",
+    className:
+      "col-span-1 sm:col-span-1 md:col-span-2 h-[300px] sm:h-[350px] md:h-[400px]",
+    thumbnail: "/images/Inhance/main.jpg",
+    content: (
+      <SkeletonOne
+        title="Inhance Jeweles"
+        projectType="Branding | Packaging Design"
+        slug="inhancejeweles"
+      />
+    ),
   },
 ];
 
-function Work() {
+export default function Work() {
   return (
-    <section className="py-12 bg-black flex justify-center" id="work">
-      <div className="container mx-auto px-4 flex flex-col items-center">
-        <div className="grid grid-cols-2 gap-2 w-full max-w-[1500px]">
-          {workData.map((work, index) => (
-            <ScrollEffect key={index}>
-              <Link href={`/work/${work.slug}`} className="block">
-                <div className="relative w-full aspect-square bg-white shadow-lg flex items-center justify-center overflow-hidden">
-                  <Image
-                    src={work.image}
-                    alt={work.title}
-                    width={1200}
-                    height={800}
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity flex-col items-center justify-center">
-                    <span className="text-xl sm:text-2xl font-semibold text-white px-6 text-center">
-                      {work.title}
-                    </span>
-                    <br />
-                    <span className="text-normal sm:text-2xl font-thin text-white px-6 text-center">
-                      {work.Projecttype}
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            </ScrollEffect>
-          ))}
-        </div>
-      </div>
-    </section>
+    <div className="h-full py-20 w-full bg-black px-4">
+      <LayoutGrid cards={cards} />
+    </div>
   );
 }
-
-export default Work;

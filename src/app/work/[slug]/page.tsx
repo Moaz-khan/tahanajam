@@ -56,18 +56,6 @@ I developed a complete branding solution, including a powerful logo, a balanced 
       "/images/Coinie/coinie6.jpg",
     ],
   },
-  solecrafters: {
-    title: "Sole Crafters",
-    details: {
-      "Project Type": "Website design",
-      Date: "June 2023",
-    },
-    description:
-      "I'm proud to have collaborated with Sole Crafters to enhance their online presence with a modern touch. Leveraging my design expertise, I crafted a clean, modern design that accurately portrays the business's high standards.",
-    mainImage: "/images/work3.jpeg",
-    designs: ["/images/work3.jpeg", "/images/work3.jpeg", "/images/work3.jpeg"],
-  },
-
   emaildesignportfolio: {
     title: "Email Design Portfolio",
     details: {
@@ -76,8 +64,21 @@ I developed a complete branding solution, including a powerful logo, a balanced 
     },
     description:
       "These are the top-notch emails I've designed for my personal projects and agency clients. Using Photoshop, Figma, Klaviyo, and Attentive, I've created impactful campaigns that have contributed to millions in revenue for my clients. With over 4 years of experience in crafting high-quality emails, I specialize in driving results and maximizing ROI.",
-    mainImage: "/images/work4.jpeg",
-    designs: ["/images/work4.jpeg", "/images/work4.jpeg", "/images/work4.jpeg"],
+    mainImage: "/images/Email Designs/Cover-homepage.jpg",
+    designs: [
+      "/images/Email Designs/1A.jpg",
+      "/images/Email Designs/1B.jpg",
+      "/images/Email Designs/2.jpg",
+      "/images/Email Designs/2B.jpg",
+      "/images/Email Designs/3A.jpg",
+      "/images/Email Designs/3B.jpg",
+      "/images/Email Designs/4A.jpg",
+      "/images/Email Designs/4B.jpg",
+      "/images/Email Designs/5A.jpg",
+      "/images/Email Designs/5B.jpg",
+      "/images/Email Designs/6.jpg",
+      "/images/Email Designs/7.jpg",
+    ],
     links: {
       "Figma Portfolio":
         "https://www.figma.com/design/A8IkQzdDZboaSMGGeSo60v/Email-examples?t=dzgS8UihAj8iylL0-0",
@@ -93,8 +94,14 @@ I developed a complete branding solution, including a powerful logo, a balanced 
     },
     description:
       "Oven Delights is a bakery located in London that recently underwent a rebranding process. The project aimed to give the brand a fresh identity, which included designing a new logo and business card, and establishing a new look and feel for the brand.",
-    mainImage: "/images/work1.jpeg",
-    designs: ["/images/work1.jpeg", "/images/work1.jpeg", "/images/work1.jpeg"],
+    mainImage: "/images/Oven delights/Cover.jpg",
+    designs: [
+      "/images/Oven delights/1.jpg",
+      "/images/Oven delights/2.jpg",
+      "/images/Oven delights/3.jpg",
+      "/images/Oven delights/4.jpg",
+      "/images/Oven delights/5.jpg",
+    ],
   },
   morphosys: {
     title: "Morphosys ©",
@@ -105,8 +112,17 @@ I developed a complete branding solution, including a powerful logo, a balanced 
     description: `Morphosys is dedicated to spearheading the integration of Web3 infrastructure into major corporations' operations. Our mission is to shape a future marked by seamless collaboration, enhanced security, utmost transparency, and effortless simplicity for users and enterprises alike.
 
 Our visual identity isn't merely about aesthetics; it mirrors our dedication to leading the charge in the dawn of Web3 infrastructure.`,
-    mainImage: "/images/work2.jpeg",
-    designs: ["/images/work2.jpeg", "/images/work2.jpeg", "/images/work2.jpeg"],
+    mainImage: "/images/Morphysis/Cover.png",
+    designs: [
+      "/images/Morphysis/1A.jpg",
+      "/images/Morphysis/2.jpg",
+      "/images/Morphysis/3.jpg",
+      "/images/Morphysis/4.jpg",
+      "/images/Morphysis/5.jpg",
+      "/images/Morphysis/6.jpg",
+      "/images/Morphysis/7.jpg",
+      "/images/Morphysis/8.jpg",
+    ],
   },
   ascp: {
     title: "AL Samyah | Company Profile",
@@ -115,18 +131,16 @@ Our visual identity isn't merely about aesthetics; it mirrors our dedication to 
       Date: "2022",
     },
     description: `The company profile of AL Samyah, a group of companies based in UAE specializing in construction. Collaborating with their management team, I designed a company profile that highlights their values and expertise in the industry.`,
-    mainImage: "/images/work3.jpeg",
-    designs: ["/images/work3.jpeg", "/images/work3.jpeg", "/images/work3.jpeg"],
-  },
-  nectar: {
-    title: "Nectar",
-    details: {
-      Services: "Label Designs",
-      Date: "2023",
-    },
-    description: `The Nectar is a newly launched skin care brand with a focus on natural and sustainable ingredients. As part of this project, the team has tasked me with designing and creating product labels that will showcase the brand's commitment to quality and eco-friendliness.`,
-    mainImage: "/images/work4.jpeg",
-    designs: ["/images/work4.jpeg", "/images/work4.jpeg", "/images/work4.jpeg"],
+    mainImage: "/images/Al Samaya/Cover.jpg",
+    designs: [
+      "/images/Al Samaya/1.jpg",
+      "/images/Al Samaya/2.jpg",
+      "/images/Al Samaya/3.jpg",
+      "/images/Al Samaya/4.jpg",
+      "/images/Al Samaya/5.jpg",
+      "/images/Al Samaya/6.jpg",
+      "/images/Al Samaya/7.JPG",
+    ],
   },
   inhancejeweles: {
     title: "Inhance Jeweles",
@@ -135,18 +149,15 @@ Our visual identity isn't merely about aesthetics; it mirrors our dedication to 
       Date: "2021",
     },
     description: `Inhance Jeweles is a new and exciting project from Dubai, launched in 2021. The brand focuses on creating stunning jewelry pieces that are both unique and timeless. As the designer behind the brand's identity and packaging, I am thrilled to introduce this project to the world and showcase the beauty and craftsmanship of Inhance Jeweles.`,
-    mainImage: "/images/work1.jpeg",
-    designs: ["/images/work1.jpeg", "/images/work1.jpeg", "/images/work1.jpeg"],
-  },
-  peugeot: {
-    title: "Peugeot Pitch Deck",
-    details: {
-      Date: "March, 2017",
-      Role: "Digital Designer | Motion Designer",
-    },
-    description: `In 2017, I had the privilege of working alongside the talented team at Spectrum Digital to craft a comprehensive pitch deck for the launch of Peugeot in Pakistan. In this exciting project, I contributed as both a motion designer and digital designer, harnessing my skills to create visually compelling and impactful presentations. Our collaborative efforts aimed to effectively communicate Peugeot's brand identity, vision, and offerings to potential stakeholders and partners in the Pakistani market. It was a rewarding experience to be part of such a significant initiative, and I'm proud of the role I played in helping to pave the way for Peugeot's entry into Pakistan's automotive landscape.`,
-    mainImage: "/images/work2.jpeg",
-    designs: ["/images/work2.jpeg", "/images/work2.jpeg", "/images/work2.jpeg"],
+    mainImage: "/images/Inhance/1.jpg",
+    designs: [
+      "/images/Inhance/2.jpg",
+      "/images/Inhance/main.jpg",
+      "/images/Inhance/4.jpg",
+      "/images/Inhance/5.jpg",
+      "/images/Inhance/6.jpg",
+      "/images/Inhance/7.jpg",
+    ],
   },
   althunayan: {
     title: "AL THUNAYAN GROUP",
@@ -155,8 +166,17 @@ Our visual identity isn't merely about aesthetics; it mirrors our dedication to 
       Date: "2019",
     },
     description: `I was tasked with designing a minimalist company profile for one of Dubai's leading groups. Through careful attention to detail and a focus on simplicity, I crafted a visually appealing profile that effectively showcased the essence and strengths of the client's business. The client's satisfaction was evident as they expressed their delight with the outcome, noting that the profile had significantly enhanced their professional image and credibility.`,
-    mainImage: "/images/work3.jpeg",
-    designs: ["/images/work3.jpeg", "/images/work3.jpeg", "/images/work3.jpeg"],
+    mainImage: "/images/Al Thunayan/1A.jpg",
+    designs: [
+      "/images/Al Thunayan/2.jpg",
+      "/images/Al Thunayan/3.jpg",
+      "/images/Al Thunayan/4.jpg",
+      "/images/Al Thunayan/5.jpg",
+      "/images/Al Thunayan/6.jpg",
+      "/images/Al Thunayan/7.jpg",
+      "/images/Al Thunayan/8.jpg",
+      "/images/Al Thunayan/9.jpg",
+    ],
   },
 };
 
