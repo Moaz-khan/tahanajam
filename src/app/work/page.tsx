@@ -159,7 +159,7 @@ const cards = [
 
 export default function Work() {
   return (
-    <div className="h-full py-20 w-full bg-black px-8">
+    <div className="h-full py-20 w-full bg-black lg:px-32 md:px-32 sm:px-8">
       <LayoutGrid cards={cards} />
     </div>
   );
