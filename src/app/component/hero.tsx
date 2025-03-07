@@ -13,8 +13,8 @@ export default function Hero() {
       {/* Left Side (Heading) */}
       <div className="px-4 md:px-6 max-w-3xl text-start sm:text-left">
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight">
-          I design stories, <br className="hidden md:block" />
-          capturing essence <br className="hidden md:block" />
+          I design stories, <br className="hidden md:block sm:block" />
+          capturing essence <br className="hidden md:block sm:block" />
           in pixels.
         </h1>
       </div>
