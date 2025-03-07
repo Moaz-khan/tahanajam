@@ -1,5 +1,5 @@
 "use client";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import dynamic from "next/dynamic";
@@ -182,13 +182,15 @@ Our visual identity isn't merely about aesthetics; it mirrors our dedication to 
 
 export default function WorkDetailPage() {
   const params = useParams();
+  const router = useRouter();
+
   console.log("Params Slug:", params.slug);
 
   const slug =
     typeof params.slug === "string" ? params.slug.toLowerCase() : null;
   const work = slug && slug in workDetails ? workDetails[slug] : null;
 
-  if (!work) {
+  if (!work || !slug) {
     return (
       <h1 className="text-2xl font-bold text-center text-white">
         Work Not Found
@@ -196,10 +198,18 @@ export default function WorkDetailPage() {
     );
   }
 
+  // **Find Next Project**
+  const workKeys = Object.keys(workDetails);
+  const currentIndex = workKeys.indexOf(slug);
+  const nextSlug =
+    currentIndex !== -1 && currentIndex < workKeys.length - 1
+      ? workKeys[currentIndex + 1]
+      : workKeys[0]; // Loop to first project if last
+
   return (
     <section className="py-12 flex justify-center bg-black text-white">
       <ScrollEffect>
-        <div className="container mx-auto px-4 flex flex-col">
+        <div className="max-w-6xl mx-auto px-8 flex flex-col">
           <div className="flex flex-col lg:flex-row justify-between mb-12 gap-6">
             <div className="lg:w-1/2">
               <h1 className="text-4xl font-bold mb-4">{work.title}</h1>
@@ -216,15 +226,16 @@ export default function WorkDetailPage() {
             </div>
           </div>
 
-          <div className="flex flex-wrap gap-4 justify-center">
+          <div className="flex flex-wrap gap-0 justify-center">
             {[work.mainImage, ...work.designs].map((image, index) => (
               <Image
                 key={index}
                 src={image}
                 alt={`Design ${index + 1}`}
-                width={1200}
-                height={700}
-                className="w-full h-[700px] object-cover rounded-lg shadow-lg"
+                width={1920}
+                height={1080}
+                loading="lazy"
+                className="w-full h-auto object-cover rounded-lg shadow-lg"
               />
             ))}
           </div>
@@ -243,6 +254,15 @@ export default function WorkDetailPage() {
               ))}
             </div>
           )}
+
+          {/* ✅ Next Project Button */}
+          <div className="mt-12 text-right">
+            <button
+              onClick={() => router.push(`/work/${String(nextSlug)}`)}
+              className="bg-black text-white font-bold py-3 px-6 rounded-lg hover:scale-110 transition">
+              Next Project →
+            </button>
+          </div>
         </div>
       </ScrollEffect>
     </section>
