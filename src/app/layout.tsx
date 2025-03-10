@@ -3,6 +3,7 @@ import { Kanit } from "next/font/google";
 import "./globals.css";
 import Navbar from "./component/navbar";
 import Footer from "./component/footer";
+import { FlotingNavbar } from "./component/FlotingNavbar";
 
 const kanit = Kanit({
   subsets: ["latin"],
@@ -25,6 +26,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${kanit.variable} antialiased`}>
         <Navbar />
+        <FlotingNavbar />
         {children}
         <Footer />
       </body>

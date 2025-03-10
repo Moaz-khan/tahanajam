@@ -9,12 +9,12 @@ interface SkeletonProps {
 
 const SkeletonOne: React.FC<SkeletonProps> = ({ title, projectType, slug }) => {
   return (
-    <div>
-      <Link href={`/work/${slug}`}>
+    <Link href={`/work/${slug}`}>
+      <div>
         <p className="font-bold md:text-4xl text-xl text-white">{title}</p>
         <p className="font-normal text-base text-white">{projectType}</p>
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 };
 
@@ -159,7 +159,7 @@ const cards = [
 
 export default function Work() {
   return (
-    <div className="h-full py-20 w-full bg-black lg:px-32 md:px-32 sm:px-8">
+    <div className="h-full py-10 w-full bg-black lg:px-10 md:px-10 sm:px-8">
       <LayoutGrid cards={cards} />
     </div>
   );

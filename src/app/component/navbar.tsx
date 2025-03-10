@@ -10,25 +10,25 @@ const Navbar = () => {
 
   return (
     <header className="bg-black text-white body-font relative">
-      <div className="container mx-auto flex justify-between items-center p-5 px-6 md:px-16">
+      <div className="container mx-auto flex justify-between items-center px-6 md:px-16">
         {/* Logo Left Side */}
         <Link href="/" className="flex-shrink-0">
           <Image
             src="/images/logo.png"
             alt="tahanajam"
-            width={300}
-            height={80}
-            className="h-auto max-w-[150px] md:max-w-[200px]"
+            width={500}
+            height={100}
+            className="h-[100px] max-w-[120px] md:max-w-[170px]"
           />
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center text-base">
+        <nav className="hidden md:flex justify-around items-center text-base font-thin">
           {["Work", "About", "Contact", "Blog"].map((item) => (
             <Link
               key={item}
               href={`/${item.toLowerCase()}`}
-              className="mr-5 text-lg hover:text-gray-600 duration-300">
+              className="mr-5 text-md hover:text-gray-600 duration-300">
               {item}
             </Link>
           ))}
