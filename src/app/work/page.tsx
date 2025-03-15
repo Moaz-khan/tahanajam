@@ -24,7 +24,7 @@ const cards = [
     title: "Fynix™",
     slug: "fynix",
     projectType: "Complete Branding | Marketing Design",
-    image: "/images/Fynix/Cover.jpg",
+    image: "/images/Fynix/finixp.png",
     className:
       "col-span-1 sm:col-span-1 md:col-span-2 h-[300px] sm:h-[350px] md:h-[400px]",
     thumbnail: "/images/Fynix/Cover.jpg",
@@ -58,7 +58,7 @@ const cards = [
     title: "Oven Delights",
     slug: "ovendelights",
     projectType: "Logo | Branding | Photography",
-    image: "/images/work1.jpeg",
+    image: "/images/Oven delights/Cover.jpg",
     className:
       "col-span-1 sm:col-span-1 md:col-span-1 h-[300px] sm:h-[350px] md:h-[400px]",
     thumbnail: "/images/Oven delights/Cover.jpg",
@@ -75,7 +75,7 @@ const cards = [
     title: "Email Design Portfolio",
     slug: "emaildesignportfolio",
     projectType: "Email Design",
-    image: "/images/work4.jpeg",
+    image: "/images/Email Designs/Cover.jpg",
     className:
       "col-span-1 sm:col-span-1 md:col-span-2 h-[300px] sm:h-[350px] md:h-[400px]",
     thumbnail: "/images/Email Designs/Cover.jpg",
@@ -126,7 +126,7 @@ const cards = [
     title: "AL THUNAYAN GROUP",
     slug: "althunayan",
     projectType: "Company Profile Design",
-    image: "/images/Al Thinayan/Cover.jpg",
+    image: "/images/Al Thunayan/Cover.jpg",
     className:
       "col-span-1 sm:col-span-1 md:col-span-1 h-[300px] sm:h-[350px] md:h-[400px]",
     thumbnail: "/images/Al Thunayan/Cover.jpg",

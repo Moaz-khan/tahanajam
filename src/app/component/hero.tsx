@@ -9,26 +9,26 @@ export const metadata: Metadata = {
 
 export default function Hero() {
   return (
-    <section className="sm:min-h-[60vh] lg:min-h-[60vh] flex flex-col sm:flex-row items-center justify-between bg-black text-white px-6 sm:px-12 md:px-10 lg:px-10 xl:px-10 py-8 sm:py-12 lg:py-20">
-      {/* Left Side (Heading) */}
-      <div className="px-4 md:px-6 max-w-3xl text-start sm:text-left">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight font-bold">
-          I design stories, <br className="hidden md:block sm:block" />
-          capturing essence <br className="hidden md:block sm:block" />
-          in pixels.
-        </h1>
-      </div>
+    <section className="h-full flex flex-col justify-between bg-black text-white px-8 py-14 lg:py-20 relative">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end w-full px-6 sm:px-12 md:px-16 lg:px-20 gap-6 sm:gap-0">
+        {/* Left Side (Heading) */}
+        <div className="max-w-4xl text-[9vw] sm:text-[4vw] md:text-[4vw] lg:text-[4.5vw] xl:text-[4vw] font-semibold leading-[1.15] sm:leading-[1.1] tracking-sung">
+          <h1>I design stories,</h1>
+          <h1>capturing essence</h1>
+          <h1> in pixels.</h1>
+        </div>
 
-      {/* Right Side (Availability & Link) */}
-      <div className="text-start sm:text-right mt-6 sm:mt-0 mr-6">
-        <p className="font-normal opacity-80 text-base sm:text-lg md:text-xl">
-          Available For Work
-        </p>
-        <Link
-          href={""}
-          className="text-base sm:text-lg md:text-xl font-normal text-gray-500 block hover:text-gray-400 duration-100">
-          @hellotahanajam.co
-        </Link>
+        {/* Right Side (Mobile: Below Left Side, Larger Screens: Right Side) */}
+        <div className="text-left sm:text-right">
+          <p className="text-xs sm:text-sm md:text-base font-medium text-gray-400">
+            Available for work
+          </p>
+          <Link
+            href="mailto:hello@tahanajam.co"
+            className="text-sm sm:text-base md:text-lg font-normal text-gray-500 hover:text-gray-400 duration-100">
+            hello@tahanajam.co
+          </Link>
+        </div>
       </div>
     </section>
   );

@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { Kanit } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "./component/navbar";
 import Footer from "./component/footer";
 import { FlotingNavbar } from "./component/FlotingNavbar";
 
-const kanit = Kanit({
+const poppins = Poppins({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800"], // Select Required Weights
-  variable: "--font-kanit", // CSS Variable
+  variable: "--font-poppins", // CSS Variable
 });
 
 export const metadata: Metadata = {
@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${kanit.variable} antialiased`}>
+      <body className={`${poppins.variable} antialiased`}>
         <Navbar />
         <FlotingNavbar />
         {children}

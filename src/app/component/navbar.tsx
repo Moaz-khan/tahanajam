@@ -23,12 +23,12 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex justify-around items-center text-base font-thin">
+        <nav className="hidden md:flex justify-around items-center text-base font-semibold">
           {["Work", "About", "Contact", "Blog"].map((item) => (
             <Link
               key={item}
               href={`/${item.toLowerCase()}`}
-              className="mr-5 text-md hover:text-gray-600 duration-300">
+              className="mr-5 text-lg hover:text-gray-600 duration-300">
               {item}
             </Link>
           ))}

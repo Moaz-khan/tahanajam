@@ -66,10 +66,10 @@ function TopComments() {
   }
 
   return (
-    <section className="py-12 bg-black flex justify-center px-4">
+    <section className="py-10 bg-black flex justify-center px-4">
       <div className="container mx-auto flex flex-col items-center">
         <div
-          className={`relative w-full max-w-[1100px] min-h-[250px] sm:min-h-[350px] md:min-h-[400px] lg:min-h-[450px] shadow-lg rounded-xl flex items-center justify-center text-center transition-opacity duration-500 overflow-hidden ${
+          className={`relative w-full max-w-full min-h-[250px] sm:min-h-[850px] md:min-h-[400px] lg:min-h-[450px] shadow-lg rounded-xl flex items-center justify-center text-center transition-opacity duration-500 overflow-hidden ${
             fade ? "opacity-100" : "opacity-0"
           }`}>
           {/* Background Image Full Cover Fix */}
@@ -79,7 +79,7 @@ function TopComments() {
               alt="Background"
               width={500}
               height={500}
-              className="w-full h-full object-cover md:object-cover sm:object-contain"
+              className="min-w-7xl max-h-6xl lg:min-w-6xl md:min-w-6xl lg:min-h-6xl md:min-h-6xl object-contain"
             />
           </div>
 
@@ -87,14 +87,15 @@ function TopComments() {
           <div className="absolute inset-0 bg-black bg-opacity-60"></div>
 
           {/* Comment Content */}
-          <div className="relative z-10 bg-black bg-opacity-50 p-6 sm:p-10 rounded-lg text-start w-full max-w-[90%]">
-            <p className="text-white text-lg sm:text-xl md:text-2xl leading-relaxed mb-6">
+          {/* Comment Content */}
+          <div className="relative z-10 p-6 sm:p-8 rounded-lg w-full max-w-[90%]">
+            <p className="text-white text-xs lg:text-2xl md:text-2xl leading-snug mb-6 text-center sm:text-left">
               {comments[currentIndex].text}
             </p>
-            <h3 className="text-lg sm:text-xl font-semibold text-white">
+            <h3 className="text-xs lg:text-xl md:text-xl font-semibold text-white text-center sm:text-left">
               {comments[currentIndex].name}
             </h3>
-            <p className="text-sm sm:text-lg font-light text-gray-300">
+            <p className="text-xs md:text-lg lg:text-lg font-light text-gray-300 text-center sm:text-left">
               {comments[currentIndex].role}
             </p>
           </div>

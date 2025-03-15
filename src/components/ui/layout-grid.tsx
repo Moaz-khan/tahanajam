@@ -12,6 +12,7 @@ type Card = {
   title: string;
   projectType: string;
   slug: string;
+  image:string;
 };
 
 export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
@@ -23,7 +24,7 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
   };
 
   return (
-    <div className="w-full h-full p-10 grid grid-cols-1 md:grid-cols-3 max-w-7xl mx-auto gap-6">
+    <div className="w-full h-full p-10 grid grid-cols-1 md:grid-cols-3 max-w-8xl mx-auto gap-6">
       {cards.map((card) => (
         <motion.div
           key={card.id}
@@ -55,14 +56,25 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
 
 // 🔹 Image Component
 const ImageComponent = ({ card }: { card: Card }) => (
-  <motion.img
-    layoutId={`image-${card.id}-image`}
-    src={card.thumbnail}
-    height="400"
-    width="600"
-    className="object-cover object-center absolute inset-0 h-full w-full rounded-lg"
-    alt="thumbnail"
-  />
+  <div className="absolute inset-0 h-full w-full">
+    {/* ✅ Desktop Image */}
+    <motion.img
+      src={card.thumbnail} // Desktop Image
+      height="400"
+      width="600"
+      className="hidden md:block object-cover object-center h-full w-full rounded-lg"
+      alt="Desktop Thumbnail"
+    />
+
+    {/* ✅ Mobile Image */}
+    <motion.img
+      src={card.image} // Mobile Image
+      height="840"
+      width="1020"
+      className="block md:hidden object-fill h-full rounded-lg"
+      alt="Mobile Image"
+    />
+  </div>
 );
 
 // 🔹 Hover Effect (Title & Project Type)
