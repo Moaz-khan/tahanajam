@@ -12,7 +12,7 @@ type Card = {
   title: string;
   projectType: string;
   slug: string;
-  image:string;
+  image: string;
 };
 
 export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
@@ -71,7 +71,7 @@ const ImageComponent = ({ card }: { card: Card }) => (
       src={card.image} // Mobile Image
       height="840"
       width="1020"
-      className="block md:hidden object-fill h-full rounded-lg"
+      className="block md:hidden object-center h-full rounded-lg"
       alt="Mobile Image"
     />
   </div>

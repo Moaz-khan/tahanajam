@@ -41,7 +41,7 @@ const cards = [
     title: "COINIO",
     slug: "coinio",
     projectType: "Brand Identity | Logo Design",
-    image: "/images/Coinie/Logo-design.png",
+    image: "/images/Coinie/small.png",
     className:
       "col-span-1 sm:col-span-1 md:col-span-1 h-[300px] sm:h-[350px] md:h-[400px]",
     thumbnail: "/images/Coinie/Logo-design.png",
@@ -58,7 +58,7 @@ const cards = [
     title: "Oven Delights",
     slug: "ovendelights",
     projectType: "Logo | Branding | Photography",
-    image: "/images/Oven delights/Cover.jpg",
+    image: "/images/Oven delights/small.png",
     className:
       "col-span-1 sm:col-span-1 md:col-span-1 h-[300px] sm:h-[350px] md:h-[400px]",
     thumbnail: "/images/Oven delights/Cover.jpg",
@@ -92,7 +92,7 @@ const cards = [
     title: "Morphosys ©",
     slug: "morphosys",
     projectType: "Branding | Website design",
-    image: "/images/Morphysis/Cover.png",
+    image: "/images/Morphysis/small.png",
     className:
       "col-span-1 sm:col-span-1 md:col-span-2 h-[300px] sm:h-[350px] md:h-[400px]",
     thumbnail: "/images/Morphysis/Cover.png",
