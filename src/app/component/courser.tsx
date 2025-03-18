@@ -16,7 +16,7 @@ const CustomCursor = () => {
 
   return (
     <div
-      className="fixed top-0 left-0 w-6 h-6 bg-white rounded-full pointer-events-none transition-transform duration-150 ease-out mix-blend-difference z-[99999]"
+      className="fixed top-0 left-0 w-3 h-3 bg-white rounded-full pointer-events-none transition-transform duration-150 ease-out mix-blend-difference z-[99999]"
       style={{
         transform: `translate(${position.x - 12}px, ${position.y - 12}px)`,
       }}
