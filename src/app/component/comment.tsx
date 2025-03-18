@@ -1,6 +1,8 @@
 "use client";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 
 interface Comment {
   image: string;
@@ -9,7 +11,6 @@ interface Comment {
 function TopComments() {
   const [comments, setComments] = useState<Comment[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [fade, setFade] = useState(true);
 
   // ✅ Fetch images from API
   useEffect(() => {
@@ -34,39 +35,78 @@ function TopComments() {
     if (comments.length === 0) return;
 
     const interval = setInterval(() => {
-      setFade(false);
-      setTimeout(() => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % comments.length);
-        setFade(true);
-      }, 500);
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % comments.length);
     }, 5000);
 
     return () => clearInterval(interval);
   }, [comments]);
+
+  // ✅ Manual Navigation
+  const prevSlide = () => {
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + comments.length) % comments.length,
+    );
+  };
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % comments.length);
+  };
 
   if (comments.length === 0) {
     return <p className="text-white text-center">Loading images...</p>;
   }
 
   return (
-    <section className="py-10 bg-black flex justify-center px-4">
-      <div className="container mx-auto flex flex-col items-center">
-        <div
-          className={`relative w-full max-w-md sm:max-w-xl md:max-w-2xl lg:max-w-3xl min-h-[200px] sm:min-h-[350px] md:min-h-[400px] lg:min-h-[450px] shadow-lg rounded-xl flex items-center justify-center text-center transition-opacity duration-500 overflow-hidden ${
-            fade ? "opacity-100" : "opacity-0"
-          }`}>
-          {/* ✅ Image Carousel with Perfect Centering & High Quality */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <Image
-              src={comments[currentIndex].image}
-              alt="Carousel Image"
-              width={800} // Optimized width
-              height={500} // Optimized height
-              quality={100} // ✅ High quality image rendering
-              priority // ✅ Ensures fast loading of images
-              className="w-full h-full object-contain rounded-lg" // ✅ `object-contain` for no cropping
+    <section className="py-8 sm:py-10 bg-black flex justify-center px-2 sm:px-4 relative">
+      <div className="container mx-auto flex flex-col items-center relative">
+        {/* ✅ Navigation Buttons */}
+        <button
+          onClick={prevSlide}
+          className="absolute left-2 sm:left-4 md:left-10 top-1/2 transform -translate-y-1/2 p-4 sm:p-5 rounded-full shadow-md z-10">
+          <FaChevronLeft className="w-7 h-7 sm:w-8 sm:h-8 text-black hover:text-white/70" />
+        </button>
+
+        <button
+          onClick={nextSlide}
+          className="absolute right-2 sm:right-4 md:right-10 top-1/2 transform -translate-y-1/2 p-4 sm:p-5 rounded-full shadow-md z-10">
+          <FaChevronRight className="w-7 h-7 sm:w-8 sm:h-8 text-black hover:text-white/70" />
+        </button>
+
+        {/* ✅ Image Carousel */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentIndex}
+            className="relative w-full max-w-xs sm:max-w-sm md:max-w-xl lg:max-w-3xl min-h-[200px] sm:min-h-[300px] md:min-h-[400px] lg:min-h-[500px] bg-opacity-10 backdrop-blur-lg shadow-lg rounded-xl flex items-center justify-center text-center overflow-hidden"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.5 }}>
+            {/* ✅ Image */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <Image
+                src={comments[currentIndex].image}
+                alt="Carousel Image"
+                width={800}
+                height={600}
+                quality={100}
+                priority
+                className="w-full h-full object-contain rounded-lg"
+              />
+            </div>
+          </motion.div>
+        </AnimatePresence>
+
+        {/* ✅ Pagination Dots */}
+        <div className="flex gap-2 mt-3 sm:mt-4">
+          {comments.slice(0, 5).map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`w-2.5 h-2.5 sm:w-3 sm:h-3 border border-white rounded-full transition duration-300 ${
+                currentIndex === index ? "bg-white" : "bg-transparent"
+              }`}
             />
-          </div>
+          ))}
         </div>
       </div>
     </section>
