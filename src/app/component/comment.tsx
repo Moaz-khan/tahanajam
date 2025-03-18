@@ -57,18 +57,18 @@ function TopComments() {
   }
 
   return (
-    <section className="py-8 sm:py-10 bg-black flex justify-center px-2 sm:px-4 relative">
+    <section className="py-8 sm:py-10 bg-black flex justify-center px-2 sm:px-4 relative cursor-none">
       <div className="container mx-auto flex flex-col items-center relative">
         {/* ✅ Navigation Buttons */}
         <button
           onClick={prevSlide}
-          className="absolute left-2 sm:left-4 md:left-10 top-1/2 transform -translate-y-1/2 p-4 sm:p-5 rounded-full shadow-md z-10">
+          className="absolute left-2 sm:left-4 md:left-10 top-1/2 transform -translate-y-1/2 p-4 sm:p-5 rounded-full shadow-md z-10 cursor-none">
           <FaChevronLeft className="w-7 h-7 sm:w-8 sm:h-8 text-black hover:text-white/70" />
         </button>
 
         <button
           onClick={nextSlide}
-          className="absolute right-2 sm:right-4 md:right-10 top-1/2 transform -translate-y-1/2 p-4 sm:p-5 rounded-full shadow-md z-10">
+          className="absolute right-2 sm:right-4 md:right-10 top-1/2 transform -translate-y-1/2 p-4 sm:p-5 rounded-full shadow-md z-10 cursor-none">
           <FaChevronRight className="w-7 h-7 sm:w-8 sm:h-8 text-black hover:text-white/70" />
         </button>
 
@@ -102,7 +102,7 @@ function TopComments() {
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`w-2.5 h-2.5 sm:w-3 sm:h-3 border border-white rounded-full transition duration-300 ${
+              className={`w-2.5 h-2.5 sm:w-3 sm:h-3 border border-white rounded-full transition duration-300  cursor-none ${
                 currentIndex === index ? "bg-white" : "bg-transparent"
               }`}
             />

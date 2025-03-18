@@ -9,7 +9,7 @@ interface SkeletonProps {
 
 const SkeletonOne: React.FC<SkeletonProps> = ({ title, projectType, slug }) => {
   return (
-    <Link href={`/work/${slug}`}>
+    <Link href={`/work/${slug}`} className="cursor-none">
       <div>
         <p className="font-bold md:text-4xl text-xl text-white">{title}</p>
         <p className="font-normal text-base text-white">{projectType}</p>

@@ -1,6 +1,10 @@
 import Image from "next/image";
 import { client } from "@/sanity/lib/client";
-import { PortableText, PortableTextBlock, PortableTextComponents } from "@portabletext/react";
+import {
+  PortableText,
+  PortableTextBlock,
+  PortableTextComponents,
+} from "@portabletext/react";
 import { Metadata } from "next";
 import LikeButton from "../like";
 import CommentSection from "../comments";
@@ -82,7 +86,7 @@ const components: PortableTextComponents = {
             alt="Blog Content Image"
             width={600}
             height={400}
-            className="rounded-md shadow-md"
+            className="rounded-md shadow-md cursor-none"
           />
         </div>
       );
@@ -152,7 +156,7 @@ export default async function BlogDetailPage({ params }: Props) {
   }
 
   return (
-    <div className="px-4 sm:px-6 md:px-12">
+    <div className="px-4 sm:px-6 md:px-12 cursor-none">
       <div className="flex justify-center py-14 px-6 sm:px-3">
         <div className="bg-white rounded-lg border border-transparent lg:border lg:border-black md:border md:border-black p-1 lg:p-14 md:p-14 max-w-5xl w-full">
           {/* ✅ Publish Date & Share Button */}
@@ -193,7 +197,7 @@ export default async function BlogDetailPage({ params }: Props) {
           )}
 
           {/* ✅ Blog Content */}
-          <div className="mt-6 text-black">
+          <div className="mt-6 text-black cursor-none">
             <PortableText value={blog.content ?? []} components={components} />
           </div>
 
@@ -204,7 +208,7 @@ export default async function BlogDetailPage({ params }: Props) {
                 <Link
                   key={index}
                   href={`${Url}/blog`}
-                  className="px-4 py-1 bg-white font-semibold text-sm border border-black/50 hover:border-black">
+                  className="px-4 py-1 bg-white font-semibold text-sm border border-black/50 hover:border-black cursor-none">
                   {tag}
                 </Link>
               ))}
@@ -214,17 +218,17 @@ export default async function BlogDetailPage({ params }: Props) {
           <div className="border-t border-gray-300 my-6"></div>
           <div className="flex justify-start items-center gap-4 text-lg">
             <div>
-              <Link href={""}>
+              <Link href={""} className="cursor-none">
                 <FaFacebookF />
               </Link>
             </div>
             <div>
-              <Link href={""}>
+              <Link href={""} className="cursor-none">
                 <FaXTwitter />
               </Link>
             </div>
             <div>
-              <Link href={""}>
+              <Link href={""} className="cursor-none">
                 <FaLinkedinIn />
               </Link>
             </div>

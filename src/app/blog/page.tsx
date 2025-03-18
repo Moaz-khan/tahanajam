@@ -73,11 +73,13 @@ export default async function BlogListPage() {
                       })
                     : "Launch Date: Not Available"}
                 </p>
-                <ShareButton postUrl={`${Url}/blog/${blog.slug}`} />
+                <ShareButton postUrl={`${Url}/blog/${blog.slug}`}  />
               </div>
 
               {/* ✅ Blog Content (Text Fixed) */}
-              <Link href={`${Url}/blog/${blog.slug}`} className="block">
+              <Link
+                href={`${Url}/blog/${blog.slug}`}
+                className="block cursor-none">
                 <div className="pt-0 pb-5 sm:pb-6 px-3 text-black hover:text-red-600 transition">
                   <h2 className="text-lg sm:text-xl md:text-2xl font-semibold">
                     {blog.title}

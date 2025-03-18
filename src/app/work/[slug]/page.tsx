@@ -207,7 +207,7 @@ export default function WorkDetailPage() {
       : workKeys[0]; // Loop to first project if last
 
   return (
-    <section className="py-12 flex justify-center bg-black text-white">
+    <section className="py-12 flex justify-center bg-black text-white  cursor-none">
       <ScrollEffect>
         <div className="max-w-6xl mx-auto px-8 flex flex-col">
           <div className="flex flex-col lg:flex-row justify-between mb-12 gap-6">
@@ -235,7 +235,7 @@ export default function WorkDetailPage() {
                 width={1920}
                 height={1080}
                 loading="lazy"
-                className="w-full h-auto object-cover rounded-lg shadow-lg"
+                className="w-full h-auto object-cover rounded-lg shadow-lg cursor-none"
               />
             ))}
           </div>
@@ -248,7 +248,7 @@ export default function WorkDetailPage() {
                   href={url ?? "#"}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white hover:underline">
+                  className="text-white hover:underline cursor-none">
                   {label}
                 </Link>
               ))}
@@ -259,7 +259,7 @@ export default function WorkDetailPage() {
           <div className="mt-12 text-right">
             <button
               onClick={() => router.push(`/work/${String(nextSlug)}`)}
-              className="bg-black text-white font-bold py-3 px-6 rounded-lg hover:scale-110 transition">
+              className="bg-black text-white font-bold py-3 px-6 rounded-lg hover:scale-110 transition cursor-none">
               Next Project →
             </button>
           </div>

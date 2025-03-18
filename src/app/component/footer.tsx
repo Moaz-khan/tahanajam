@@ -3,7 +3,7 @@ import React from "react";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-neutral-900 p-6 sm:p-10">
+    <footer className="bg-neutral-900 p-6 sm:p-10 cursor-none">
       <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4 sm:gap-6">
         {/* Left Side: Heading */}
         <div className="text-left">
@@ -19,13 +19,13 @@ const Footer: React.FC = () => {
         <div className="text-right">
           <Link
             href="tel:+447553296029"
-            className="text-white text-sm sm:text-lg font-semibold hover:text-gray-400 transition">
+            className="text-white text-sm sm:text-lg font-semibold hover:text-gray-400 transition cursor-none">
             +44 7553 296029
           </Link>
           <br />
           <Link
             href="mailto:hello@tahanajam.co"
-            className="text-white text-sm sm:text-lg font-semibold hover:text-gray-400 transition">
+            className="text-white text-sm sm:text-lg font-semibold hover:text-gray-400 transition cursor-none">
             hello@tahanajam.co
           </Link>
         </div>
@@ -34,17 +34,17 @@ const Footer: React.FC = () => {
         <div className="flex gap-4 sm:gap-6">
           <Link
             href="/work"
-            className="text-white text-sm sm:text-lg font-semibold hover:text-gray-400 transition">
+            className="text-white text-sm sm:text-lg font-semibold hover:text-gray-400 transition cursor-none">
             Work
           </Link>
           <Link
             href="/about"
-            className="text-white text-sm sm:text-lg font-semibold hover:text-gray-400 transition">
+            className="text-white text-sm sm:text-lg font-semibold hover:text-gray-400 transition cursor-none">
             About
           </Link>
           <Link
             href="/contact"
-            className="text-white text-sm sm:text-lg font-semibold hover:text-gray-400 transition">
+            className="text-white text-sm sm:text-lg font-semibold hover:text-gray-400 transition cursor-none">
             Contact
           </Link>
         </div>
@@ -55,7 +55,7 @@ const Footer: React.FC = () => {
             href="https://www.linkedin.com/in/tahanajam"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white text-sm sm:text-lg font-semibold hover:text-gray-400 transition">
+            className="text-white text-sm sm:text-lg font-semibold hover:text-gray-400 transition cursor-none">
             LinkedIn
           </Link>
         </div>

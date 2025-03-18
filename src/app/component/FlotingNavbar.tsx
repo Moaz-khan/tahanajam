@@ -28,7 +28,7 @@ export function FlotingNavbar() {
   ];
 
   return (
-    <div className="relative w-full flex justify-center items-center lg:block md:block sm:hidden">
+    <div className="relative w-full flex justify-center items-center lg:block md:block sm:hidden cursor-none">
       <FloatingNav navItems={navItems} />
     </div>
   );

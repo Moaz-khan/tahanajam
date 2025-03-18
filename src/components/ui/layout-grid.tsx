@@ -51,14 +51,14 @@ const ImageComponent = ({ card }: { card: Card }) => (
       src={card.thumbnail}
       height="400"
       width="600"
-      className="hidden md:block object-cover object-center h-full w-full rounded-lg"
+      className="hidden md:block object-cover object-center h-full w-full rounded-lg cursor-none"
       alt="Desktop Thumbnail"
     />
     <motion.img
       src={card.image}
       height="840"
       width="1020"
-      className="block md:hidden object-center h-full rounded-lg"
+      className="block md:hidden object-center h-full rounded-lg cursor-none"
       alt="Mobile Image"
     />
   </div>
@@ -67,12 +67,12 @@ const ImageComponent = ({ card }: { card: Card }) => (
 // 🔹 Hover Skeleton (Without Extra Line)
 const SkeletonOverlay = ({ card }: { card: Card }) => (
   <motion.div
-    className="absolute inset-0 bg-black bg-opacity-80 flex flex-col items-center justify-center text-white rounded-lg shadow-lg p-4"
+    className="absolute inset-0 bg-black bg-opacity-80 flex flex-col items-center justify-center text-white rounded-lg shadow-lg p-4 cursor-none"
     initial={{ opacity: 0, scale: 0.95 }}
     animate={{ opacity: 1, scale: 1 }}
     exit={{ opacity: 0, scale: 0.95 }}
     transition={{ duration: 0.3 }}>
-    <p className="text-2xl font-bold">{card.title}</p>
-    <p className="text-lg opacity-80">{card.projectType}</p>
+    <p className="text-2xl font-bold  cursor-none">{card.title}</p>
+    <p className="text-lg opacity-80  cursor-none">{card.projectType}</p>
   </motion.div>
 );

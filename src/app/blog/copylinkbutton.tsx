@@ -24,7 +24,7 @@ const CopyLinkButton = () => {
     <button
       onClick={copyToClipboard}
       className="flex items-center text-black transition">
-      <FaLink className="text-lg" />
+      <FaLink className="text-lg cursor-none" />
     </button>
   );
 };

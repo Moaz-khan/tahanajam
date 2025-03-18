@@ -22,14 +22,14 @@ export default function ShareButton({ postUrl }: ShareButtonProps) {
   };
 
   return (
-    <>
+    <div className="cursor-none">
       {/* ✅ Share Button */}
       <button
         onClick={() => setIsOpen(true)}
-        className="flex items-center gap-2 text-black px-4 py-2 rounded-lg">
+        className="flex items-center gap-2 text-black px-4 py-2 rounded-lg cursor-none">
         <BsThreeDotsVertical
           size={15}
-          className=" hover:text-gray-700 transition"
+          className=" hover:text-gray-700 transition cursor-none"
         />
       </button>
 
@@ -43,25 +43,25 @@ export default function ShareButton({ postUrl }: ShareButtonProps) {
               <Link href={socialLinks.facebook} target="_blank">
                 <FaFacebookF
                   size={24}
-                  className="text-blue-600 hover:text-blue-800"
+                  className="text-blue-600 hover:text-blue-800 cursor-none"
                 />
               </Link>
               <Link href={socialLinks.twitter} target="_blank">
                 <FaXTwitter
                   size={24}
-                  className="text-black hover:text-gray-700"
+                  className="text-black hover:text-gray-700 cursor-none"
                 />
               </Link>
               <Link href={socialLinks.linkedin} target="_blank">
                 <FaLinkedinIn
                   size={24}
-                  className="text-blue-800 hover:text-blue-900"
+                  className="text-blue-800 hover:text-blue-900 cursor-none"
                 />
               </Link>
               <Link href={socialLinks.whatsapp} target="_blank">
                 <FaWhatsapp
                   size={24}
-                  className="text-green-500 hover:text-green-700"
+                  className="text-green-500 hover:text-green-700 cursor-none"
                 />
               </Link>
             </div>
@@ -72,19 +72,19 @@ export default function ShareButton({ postUrl }: ShareButtonProps) {
                 navigator.clipboard.writeText(postUrl);
                 alert("Link copied!");
               }}
-              className="mt-4 w-full bg-gray-200 py-2 rounded-lg hover:bg-gray-300 transition">
+              className="mt-4 w-full bg-gray-200 py-2 rounded-lg hover:bg-gray-300 transition cursor-none">
               Copy Link
             </button>
 
             {/* ✅ Close Button */}
             <button
               onClick={() => setIsOpen(false)}
-              className="mt-2 w-full bg-gray-100 py-2 rounded-lg hover:bg-gray-200 transition">
+              className="mt-2 w-full bg-gray-100 py-2 rounded-lg hover:bg-gray-200 transition cursor-none">
               Close
             </button>
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }

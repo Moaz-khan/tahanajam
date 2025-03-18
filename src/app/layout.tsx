@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./component/navbar";
 import Footer from "./component/footer";
 import { FlotingNavbar } from "./component/FlotingNavbar";
+import CustomCursor from "./component/courser";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -24,7 +25,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} antialiased`}>
+      <body className={`${poppins.variable} antialiased cursor-none`}>
+        <CustomCursor />
         <Navbar />
         <FlotingNavbar />
         {children}

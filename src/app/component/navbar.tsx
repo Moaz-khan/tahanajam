@@ -9,7 +9,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="bg-black text-white body-font relative">
+    <header className="bg-black text-white body-font relative cursor-none">
       <div className="container mx-auto flex justify-between items-center px-6 md:px-16">
         {/* Logo Left Side */}
         <Link href="/" className="flex-shrink-0">
@@ -18,7 +18,7 @@ const Navbar = () => {
             alt="tahanajam"
             width={500}
             height={100}
-            className="h-[100px] max-w-[120px] md:max-w-[170px]"
+            className="h-[100px] max-w-[120px] md:max-w-[170px] cursor-none"
           />
         </Link>
 
@@ -28,7 +28,7 @@ const Navbar = () => {
             <Link
               key={item}
               href={`/${item.toLowerCase()}`}
-              className="mr-5 text-lg hover:text-gray-600 duration-300">
+              className="mr-5 text-lg hover:text-gray-600 duration-300 cursor-none">
               {item}
             </Link>
           ))}
