@@ -94,29 +94,33 @@ const components: PortableTextComponents = {
   },
   block: {
     normal: ({ children }) => (
-      <p className="text-lg leading-relaxed text-gray-900">{children}</p>
+      <p className="text-lg leading-relaxed text-gray-900 my-3">{children}</p>
     ),
     h1: ({ children }) => (
-      <h1 className="text-3xl sm:text-4xl font-bold mt-4">{children}</h1>
+      <h1 className="text-3xl sm:text-4xl font-bold mt-6 mb-4">{children}</h1>
     ),
     h2: ({ children }) => (
-      <h2 className="text-2xl sm:text-3xl font-semibold mt-3">{children}</h2>
+      <h2 className="text-2xl sm:text-3xl font-semibold mt-5 mb-3">
+        {children}
+      </h2>
     ),
     h3: ({ children }) => (
-      <h3 className="text-xl sm:text-2xl font-medium mt-2">{children}</h3>
+      <h3 className="text-xl sm:text-2xl font-medium mt-4 mb-2">{children}</h3>
     ),
     blockquote: ({ children }) => (
-      <blockquote className="border-l-4 border-gray-500 pl-4 italic text-gray-700">
+      <blockquote className="border-l-4 border-gray-500 pl-4 italic text-gray-700 my-4">
         {children}
       </blockquote>
     ),
   },
   list: {
     bullet: ({ children }) => (
-      <ul className="list-disc list-inside ml-4">{children}</ul>
+      <ul className="list-disc list-inside ml-4 my-3 space-y-2">{children}</ul>
     ),
     number: ({ children }) => (
-      <ol className="list-decimal list-inside ml-4">{children}</ol>
+      <ol className="list-decimal list-inside ml-4 my-3 space-y-2">
+        {children}
+      </ol>
     ),
   },
   marks: {
@@ -126,7 +130,6 @@ const components: PortableTextComponents = {
     em: ({ children }) => <em className="italic text-gray-800">{children}</em>,
   },
 };
-
 const fetchCommentCount = async (postId: string): Promise<number> => {
   try {
     const count = await client.fetch<number>(
@@ -182,6 +185,8 @@ export default async function BlogDetailPage({ params }: Props) {
           <p className="text-black mt-2 text-base sm:text-lg">
             {blog.description}
           </p>
+          <br />
+          <br />
 
           {/* ✅ Blog Main Image */}
           {blog.mainImage && (
@@ -195,6 +200,7 @@ export default async function BlogDetailPage({ params }: Props) {
               />
             </div>
           )}
+          <br /><br />
 
           {/* ✅ Blog Content */}
           <div className="mt-6 text-black cursor-none">
