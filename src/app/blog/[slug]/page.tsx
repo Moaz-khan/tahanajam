@@ -65,7 +65,7 @@ const fetchBlog = async (slug: string): Promise<Blog | null> => {
       launchAt
     }`;
 
-    return await client.fetch<Blog>(query, { slug });
+    return await client.fetch<Blog>(query, { slug }, { cache: "no-cache" });
   } catch (error) {
     console.error("Error fetching blog:", error);
     return null;
