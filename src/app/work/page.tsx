@@ -1,166 +1,132 @@
-import { LayoutGrid } from "@/components/ui/layout-grid";
-import Link from "next/link";
+"use client";
 
-interface SkeletonProps {
-  title: string;
-  projectType: string;
-  slug: string;
-}
+import React, { useState, useEffect } from "react";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
 
-const SkeletonOne: React.FC<SkeletonProps> = ({ title, projectType, slug }) => {
-  return (
-    <Link href={`/work/${slug}`} className="cursor-none">
-      <div>
-        <p className="font-bold md:text-4xl text-xl text-white">{title}</p>
-        <p className="font-normal text-base text-white">{projectType}</p>
-      </div>
-    </Link>
-  );
-};
-
-const cards = [
+const projects = [
   {
     id: 1,
     title: "Fynix™",
+    size: "lg",
+    image: "/images/Fynix/Cover.jpg",
+    mobileImage: "/images/Fynix/finixp.png",
+    category: "Complete Branding | Marketing Design",
     slug: "fynix",
-    projectType: "Complete Branding | Marketing Design",
-    image: "/images/Fynix/finixp.png",
-    className:
-      "col-span-1 sm:col-span-1 md:col-span-2 h-[300px] sm:h-[350px] md:h-[400px]",
-    thumbnail: "/images/Fynix/Cover.jpg",
-    content: (
-      <SkeletonOne
-        title="Fynix™"
-        projectType="Complete Branding | Marketing Design"
-        slug="fynix"
-      />
-    ),
   },
   {
     id: 2,
     title: "COINIO",
+    size: "sm",
+    image: "/images/Coinie/Logo-design.png",
+    category: "Brand Identity | Logo Design",
     slug: "coinio",
-    projectType: "Brand Identity | Logo Design",
-    image: "/images/Coinie/small.png",
-    className:
-      "col-span-1 sm:col-span-1 md:col-span-1 h-[300px] sm:h-[350px] md:h-[400px]",
-    thumbnail: "/images/Coinie/Logo-design.png",
-    content: (
-      <SkeletonOne
-        title="COINIO"
-        projectType="Brand Identity | Logo Design"
-        slug="coinio"
-      />
-    ),
   },
   {
     id: 3,
     title: "Oven Delights",
+    size: "sm",
+    image: "/images/Oven delights/Cover.jpg",
+    category: "Logo | Branding | Photography",
     slug: "ovendelights",
-    projectType: "Logo | Branding | Photography",
-    image: "/images/Oven delights/small.png",
-    className:
-      "col-span-1 sm:col-span-1 md:col-span-1 h-[300px] sm:h-[350px] md:h-[400px]",
-    thumbnail: "/images/Oven delights/Cover.jpg",
-    content: (
-      <SkeletonOne
-        title="Oven Delights"
-        projectType="Logo | Branding | Photography"
-        slug="ovendelights"
-      />
-    ),
   },
   {
     id: 4,
     title: "Email Design Portfolio",
-    slug: "emaildesignportfolio",
-    projectType: "Email Design",
+    size: "lg",
     image: "/images/Email Designs/Cover.jpg",
-    className:
-      "col-span-1 sm:col-span-1 md:col-span-2 h-[300px] sm:h-[350px] md:h-[400px]",
-    thumbnail: "/images/Email Designs/Cover.jpg",
-    content: (
-      <SkeletonOne
-        title="Email Design Portfolio"
-        projectType="Email Design"
-        slug="emaildesignportfolio"
-      />
-    ),
+    mobileImage: "/images/Email Designs/small1.png",
+    category: "Email Design",
+    slug: "emaildesignportfolio",
   },
   {
     id: 5,
     title: "Morphosys ©",
+    size: "lg",
+    image: "/images/Morphysis/Cover.png",
+    mobileImage: "/images/Morphysis/small.png",
+    category: "Branding | Website design",
     slug: "morphosys",
-    projectType: "Branding | Website design",
-    image: "/images/Morphysis/small.png",
-    className:
-      "col-span-1 sm:col-span-1 md:col-span-2 h-[300px] sm:h-[350px] md:h-[400px]",
-    thumbnail: "/images/Morphysis/Cover.png",
-    content: (
-      <SkeletonOne
-        title="Morphosys ©"
-        projectType="Branding | Website design"
-        slug="morphosys"
-      />
-    ),
   },
   {
     id: 6,
     title: "AL Samyah | Company Profile",
-    slug: "ascp",
-    projectType: "Company Profile",
+    size: "sm",
     image: "/images/Al Samaya/Cover.jpg",
-    className:
-      "col-span-1 sm:col-span-1 md:col-span-1 h-[300px] sm:h-[350px] md:h-[400px]",
-    thumbnail: "/images/Al Samaya/Cover.jpg",
-    content: (
-      <SkeletonOne
-        title="AL Samyah | Company Profile"
-        projectType="Company Profile"
-        slug="ascp"
-      />
-    ),
-  },
-  {
-    id: 8,
-    title: "AL THUNAYAN GROUP",
-    slug: "althunayan",
-    projectType: "Company Profile Design",
-    image: "/images/Al Thunayan/Cover.jpg",
-    className:
-      "col-span-1 sm:col-span-1 md:col-span-1 h-[300px] sm:h-[350px] md:h-[400px]",
-    thumbnail: "/images/Al Thunayan/Cover.jpg",
-    content: (
-      <SkeletonOne
-        title="AL THUNAYAN GROUP"
-        projectType="Company Profile Design"
-        slug="althunayan"
-      />
-    ),
+    category: "Company Profile",
+    slug: "ascp",
   },
   {
     id: 7,
+    title: "AL THUNAYAN GROUP",
+    size: "sm",
+    image: "/images/Al Thunayan/Cover.jpg",
+    category: "Company Profile Design",
+    slug: "althunayan",
+  },
+  {
+    id: 8,
     title: "Inhance Jeweles",
-    slug: "inhancejeweles",
-    projectType: "Branding | Packaging Design",
+    size: "lg",
     image: "/images/Inhance/main.jpg",
-    className:
-      "col-span-1 sm:col-span-1 md:col-span-2 h-[300px] sm:h-[350px] md:h-[400px]",
-    thumbnail: "/images/Inhance/main.jpg",
-    content: (
-      <SkeletonOne
-        title="Inhance Jeweles"
-        projectType="Branding | Packaging Design"
-        slug="inhancejeweles"
-      />
-    ),
+    category: "Branding | Packaging Design",
+    slug: "inhancejeweles",
   },
 ];
 
-export default function Work() {
+export default function WorkSection() {
+  const [isMobile, setIsMobile] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize(); // Initial check
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
-    <div className="h-full py-10 w-full bg-black lg:px-10 md:px-10 sm:px-8">
-      <LayoutGrid cards={cards} />
+    <div className="bg-black cursor-none">
+      <div className="container mx-auto p-4 max-w-8xl">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {projects.map((project) => (
+            <div
+              key={project.id}
+              className={`relative rounded-xl overflow-hidden cursor-none shadow-lg transform transition duration-300 hover:scale-105 ${
+                project.size === "lg" ? "md:col-span-2" : "md:col-span-1"
+              }`}
+              onClick={() => router.push(`/work/${project.slug}`)}>
+              <div className="relative w-full h-[250px] md:h-[400px]">
+                <Image
+                  src={
+                    isMobile && project.mobileImage
+                      ? project.mobileImage
+                      : project.image
+                  }
+                  alt={project.title}
+                  layout="fill"
+                  objectFit="cover"
+                  objectPosition="center"
+                  className="rounded-lg"
+                />
+              </div>
+              <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-60 opacity-0 transition-opacity duration-300 hover:opacity-100 p-4 text-center">
+                <h3 className="text-white text-2xl font-bold">
+                  {project.title}
+                </h3>
+
+                <p className="text-white text-lg mt-1">{project.category}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
