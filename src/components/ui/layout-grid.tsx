@@ -56,8 +56,8 @@ const ImageComponent = ({ card }: { card: Card }) => (
     />
     <motion.img
       src={card.image}
-      height="840"
-      width="1020"
+      height={300}
+      width={550}
       className="block md:hidden object-center h-full rounded-lg cursor-none"
       alt="Mobile Image"
     />
