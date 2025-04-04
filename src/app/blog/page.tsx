@@ -36,7 +36,7 @@ export default async function BlogListPage() {
           className="text-[22px] sm:text-3xl font-semibold mb-0 text-start 
           bg-red-700 text-white py-4 px-6 md:py-5 
           sm:bg-transparent sm:text-black 
-          relative z-20">
+          relative z-20 lg:hidden md:hidden">
           Blog
         </h1>
 
@@ -73,7 +73,7 @@ export default async function BlogListPage() {
                       })
                     : "Launch Date: Not Available"}
                 </p>
-                <ShareButton postUrl={`${Url}/blog/${blog.slug}`}  />
+                <ShareButton postUrl={`${Url}/blog/${blog.slug}`} />
               </div>
 
               {/* ✅ Blog Content (Text Fixed) */}
@@ -81,12 +81,9 @@ export default async function BlogListPage() {
                 href={`${Url}/blog/${blog.slug}`}
                 className="block cursor-none">
                 <div className="pt-0 pb-5 sm:pb-6 px-3 text-black hover:text-red-600 transition">
-                  <h2 className="text-lg sm:text-xl md:text-2xl font-semibold">
+                  <h2 className="text-lg sm:text-xl md:text-3xl font-semibold leading-tight pt-5">
                     {blog.title}
                   </h2>
-                  <p className="text-sm sm:text-base text-gray-700 line-clamp-2 sm:line-clamp-3">
-                    {blog.description}
-                  </p>
                 </div>
               </Link>
             </div>
