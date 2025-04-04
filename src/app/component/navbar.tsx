@@ -10,7 +10,7 @@ const Navbar = () => {
 
   return (
     <header className="bg-black text-white body-font relative cursor-none">
-      <div className="container mx-auto flex justify-between items-center px-6 md:px-16">
+      <div className="container mx-auto flex justify-between items-center px-6 md:px-24">
         {/* Logo Left Side */}
         <Link href="/" className="flex-shrink-0">
           <Image
@@ -23,7 +23,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex justify-around items-center text-base font-semibold">
+        <nav className="hidden md:flex justify-around items-center text-base font-semibold gap-6">
           {["Work", "About", "Contact", "Blog"].map((item) => (
             <Link
               key={item}

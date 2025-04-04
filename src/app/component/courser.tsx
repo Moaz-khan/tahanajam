@@ -53,7 +53,7 @@ const CustomCursor = () => {
   return (
     <div
       className={`fixed top-0 left-0 rounded-full pointer-events-none transition-transform duration-200 ease-out mix-blend-difference z-[99999] bg-white ${
-        isHoveringLink ? "w-12 h-12 opacity-80" : "w-4 h-4 opacity-100"
+        isHoveringLink ? "w-12 h-12 opacity-60" : "w-4 h-4 opacity-100"
       }`}
       style={{
         transform: `translate(${position.x - (isHoveringLink ? 24 : 8)}px, ${position.y - (isHoveringLink ? 24 : 8)}px)`,
