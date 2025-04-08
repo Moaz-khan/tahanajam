@@ -47,6 +47,11 @@ const Footer: React.FC = () => {
             className="text-white text-sm sm:text-lg font-semibold hover:text-gray-400 transition cursor-none">
             Contact
           </Link>
+          <Link
+            href="/blog"
+            className="text-white text-sm sm:text-lg font-semibold hover:text-gray-400 transition cursor-none">
+            Blog
+          </Link>
         </div>
 
         {/* Social Links */}

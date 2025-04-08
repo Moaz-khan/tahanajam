@@ -45,7 +45,7 @@ export default function Page() {
             </h1>
             <div className="grid sm:grid-cols-2 gap-8 text-gray-500 py-6 max-w-3xl md:max-w-4xl cursor-none">
               <div>
-                <h2 className="text-2xl sm:text-xl md:text-3xl hover:text-gray-400 duration-100">
+                <h2 className="text-2xl sm:text-xl md:text-2xl hover:text-gray-400 duration-100">
                   MA in Graphic Arts
                 </h2>
                 <h3 className="text-sm sm:text-xs md:text-lg hover:text-gray-400 duration-100">
@@ -56,14 +56,14 @@ export default function Page() {
                 </h3>
               </div>
               <div>
-                <h2 className="text-2xl sm:text-xl md:text-3xl hover:text-gray-400 duration-100">
+                <h2 className="text-2xl sm:text-xl md:text-2xl hover:text-gray-400 duration-100">
                   Graphic Design Specialization
                 </h2>
                 <h3 className="text-sm sm:text-xs md:text-lg hover:text-gray-400 duration-100">
                   CalArts
                 </h3>
                 <br />
-                <h2 className="text-2xl sm:text-xl md:text-3xl hover:text-gray-400 duration-100">
+                <h2 className="text-2xl sm:text-xl md:text-2xl hover:text-gray-400 duration-100">
                   Branding for Designers
                 </h2>
                 <h3 className="text-sm sm:text-xs md:text-lg hover:text-gray-400 duration-100">

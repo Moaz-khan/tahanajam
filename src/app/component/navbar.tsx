@@ -28,7 +28,7 @@ const Navbar = () => {
             <Link
               key={item}
               href={`/${item.toLowerCase()}`}
-              className="mr-5 text-lg hover:text-gray-600 duration-300 cursor-none">
+              className="mr-5 text-lg hover:text-white duration-300 cursor-none">
               {item}
             </Link>
           ))}

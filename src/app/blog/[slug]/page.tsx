@@ -94,7 +94,7 @@ const components: PortableTextComponents = {
   },
   block: {
     normal: ({ children }) => (
-      <p className="text-lg leading-relaxed text-gray-900 my-3">{children}</p>
+      <p className="text-lg leading-loose text-gray-900 my-3">{children}</p>
     ),
     h1: ({ children }) => (
       <h1 className="text-3xl sm:text-4xl font-bold mt-6 mb-4">{children}</h1>
@@ -115,10 +115,10 @@ const components: PortableTextComponents = {
   },
   list: {
     bullet: ({ children }) => (
-      <ul className="list-disc list-inside ml-4 my-3 space-y-2">{children}</ul>
+      <ul className="list-disc list-inside ml-4 my-5 space-y-2 leading-loose">{children}</ul>
     ),
     number: ({ children }) => (
-      <ol className="list-decimal list-inside ml-4 my-3 space-y-2">
+      <ol className="list-decimal list-inside ml-4 my-5 space-y-2 leading-loose">
         {children}
       </ol>
     ),
@@ -179,10 +179,10 @@ export default async function BlogDetailPage({ params }: Props) {
           </div>
 
           {/* ✅ Blog Title & Description */}
-          <h1 className="text-3xl lg:text-3xl md:text-3xl sm:text-lg font-bold">
+          <h1 className="text-3xl lg:text-3xl md:text-3xl sm:text-lg font-bold my-5">
             {blog.title}
           </h1>
-          <p className="text-black mt-2 text-base sm:text-lg">
+          <p className="text-black mt-3 text-base sm:text-lg">
             {blog.description}
           </p>
           <br />

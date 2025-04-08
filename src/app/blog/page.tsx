@@ -30,16 +30,8 @@ export default async function BlogListPage() {
 
   return (
     <div className="w-full bg-white min-h-screen px-0 sm:px-4 md:px-10 lg:px-20">
-      <div className="max-w-7xl mx-auto pb-6 md:py-10 lg:py-10">
-        {/* ✅ Blog Heading */}
-        <h1
-          className="text-[22px] sm:text-3xl font-semibold mb-0 text-start 
-          bg-red-700 text-white py-4 px-6 md:py-5 
-          sm:bg-transparent sm:text-black 
-          relative z-20 lg:hidden md:hidden">
-          Blog
-        </h1>
-
+      <div className="max-w-6xl mx-auto pb-6 md:py-10 lg:py-10">
+       
         {/* ✅ Blog Cards Grid */}
         <div
           className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 sm:gap-8 
@@ -47,7 +39,7 @@ export default async function BlogListPage() {
           {blogs.map((blog) => (
             <div
               key={blog.slug}
-              className="bg-white overflow-hidden w-full max-w-full sm:max-w-[500px] md:max-w-[550px] mx-auto 
+              className="bg-white overflow-hidden w-full max-w-full sm:max-w-[400px] md:max-w-[550px] mx-auto 
               transition-all hover:shadow-lg hover:scale-[1.02] 
               border-b sm:border sm:border-black/30 rounded-lg duration-300">
               {/* ✅ Blog Image */}
@@ -81,7 +73,7 @@ export default async function BlogListPage() {
                 href={`${Url}/blog/${blog.slug}`}
                 className="block cursor-none">
                 <div className="pt-0 pb-5 sm:pb-6 px-3 text-black hover:text-red-600 transition">
-                  <h2 className="text-lg sm:text-xl md:text-3xl font-semibold leading-tight pt-5">
+                  <h2 className="text-lg sm:text-xl md:text-2xl font-semibold leading-2 pt-5">
                     {blog.title}
                   </h2>
                 </div>
