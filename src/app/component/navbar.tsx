@@ -23,7 +23,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex justify-around items-center text-base font-semibold gap-6">
+        <nav className="hidden md:flex justify-around items-center text-base font-medium gap-6">
           {["Work", "About", "Contact", "Blog"].map((item) => (
             <Link
               key={item}

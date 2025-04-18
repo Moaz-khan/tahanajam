@@ -2,6 +2,7 @@ import dynamic from "next/dynamic";
 import Comments from "./component/comment";
 import Hero from "./component/hero";
 import Work from "./work/page";
+import ScrollAnimation from "./component/ScrollAnimation";
 
 const ScrollEffect = dynamic(() => import("./component/ScrollEffect"), {
   ssr: false,
@@ -10,16 +11,15 @@ const ScrollEffect = dynamic(() => import("./component/ScrollEffect"), {
 export default function Home() {
   return (
     <div className="bg-black">
-      
-      <ScrollEffect>
+      <ScrollAnimation animationType="fade-up">
         <Hero />
-      </ScrollEffect>
+      </ScrollAnimation>
       <ScrollEffect>
         <Work />
       </ScrollEffect>
-      <ScrollEffect>
+      <ScrollAnimation animationType="fade-up">
         <Comments />
-      </ScrollEffect>
+      </ScrollAnimation>
     </div>
   );
 }
