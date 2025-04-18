@@ -37,9 +37,8 @@ export default async function BlogListPage() {
           className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 sm:gap-8 
             -mt-4 md:mt-6">
           {blogs.map((blog) => (
-            <ScrollAnimation stagger>
+            <ScrollAnimation key={blog.slug} stagger animationType="bounce">
               <div
-                key={blog.slug}
                 className="bg-white overflow-hidden w-full max-w-full sm:max-w-[400px] md:max-w-[550px] mx-auto 
                 transition-all hover:shadow-lg hover:scale-[1.02] 
                 border-b sm:border sm:border-black/30 rounded-2xl duration-300">
