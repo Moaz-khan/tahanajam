@@ -11,7 +11,7 @@ export function FlotingNavbar() {
     },
     {
       name: "Work",
-      link: "/work",
+      link: "/#work",
     },
     {
       name: "About",

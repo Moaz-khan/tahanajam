@@ -14,9 +14,11 @@ export default function Home() {
       <ScrollAnimation animationType="fade-up">
         <Hero />
       </ScrollAnimation>
-      <ScrollEffect>
-        <Work />
-      </ScrollEffect>
+      <div id="work">
+        <ScrollEffect>
+          <Work />
+        </ScrollEffect>
+      </div>
       <ScrollAnimation animationType="fade-up">
         <Comments />
       </ScrollAnimation>

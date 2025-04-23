@@ -24,7 +24,12 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex justify-around items-center text-base font-medium gap-6">
-          {["Work", "About", "Contact", "Blog"].map((item) => (
+          <Link
+            href="/#work"
+            className="mr-5 text-lg hover:text-white duration-300 cursor-none">
+            Work
+          </Link>
+          {["About", "Contact", "Blog"].map((item) => (
             <Link
               key={item}
               href={`/${item.toLowerCase()}`}
@@ -54,7 +59,13 @@ const Navbar = () => {
         </button>
 
         <nav className="flex flex-col items-center space-y-6 text-white text-xl">
-          {["Work", "About", "Contact", "Blog"].map((item) => (
+          <Link
+            href="/#work"
+            onClick={() => setIsOpen(false)}
+            className="hover:text-gray-400">
+            Work
+          </Link>
+          {["About", "Contact", "Blog"].map((item) => (
             <Link
               key={item}
               href={`/${item.toLowerCase()}`}
