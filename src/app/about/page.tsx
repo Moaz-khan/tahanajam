@@ -16,10 +16,10 @@ export default function Page() {
 
         {/* Introduction with fade up */}
         <ScrollAnimation stagger>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl font-thin leading-relaxed sm:leading-loose pt-6 max-w-3xl md:max-w-4xl cursor-none">
+          <p className="text-sm sm:text-base md:text-lg lg:text-lg font-thin leading-relaxed sm:leading-loose pt-6 max-w-3xl md:max-w-4xl cursor-none">
             {`With a solid foundation in Digital Design and Creative Direction, based in London, I bring over five years of valuable experience and have been actively contributing to the Email Marketing industry for the past three years.`}
           </p>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl font-thin leading-relaxed sm:leading-loose pt-6 max-w-3xl md:max-w-4xl cursor-none">
+          <p className="text-sm sm:text-base md:text-lg lg:text-lg font-thin leading-relaxed sm:leading-loose pt-6 max-w-3xl md:max-w-4xl cursor-none">
             {`Throughout my career, my approach has consistently focused on creating impactful visuals that go beyond the ordinary. Rooted in extensive research and robust conceptual development, my work aims not only to meet but to exceed client expectations.`}
           </p>
         </ScrollAnimation>
@@ -33,6 +33,7 @@ export default function Page() {
             <h1 className="hover:text-gray-400 duration-100">FIGMA</h1>
             <h1 className="hover:text-gray-400 duration-100">KLAVIYO</h1>
             <h1 className="hover:text-gray-400 duration-100">WEBFLOW</h1>
+            <h1 className="hover:text-gray-400 duration-100">Wix</h1>
           </div>
         </ScrollAnimation>
 

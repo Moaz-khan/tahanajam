@@ -68,7 +68,7 @@ const projects = [
     id: 8,
     title: "Inhance Jeweles",
     size: "lg",
-    image: "/images/Inhance/main.jpg",
+    image: "/images/Inhance/6.jpg",
     category: "Branding | Packaging Design",
     slug: "inhancejeweles",
   },

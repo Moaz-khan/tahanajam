@@ -216,13 +216,15 @@ export default function WorkDetailPage() {
               {Object.entries(work.details).map(([key, value]) => (
                 <div key={key} className="mb-2">
                   <h3 className="text-xl font-semibold text-white">{key}:</h3>
-                  <p className="text-lg">{String(value)}</p>
+                  <p className="text-lg font-thin">{String(value)}</p>
                 </div>
               ))}
             </div>
 
             <div className="lg:w-1/2">
-              <p className="text-xl text-gray-300">{work.description}</p>
+              <p className="text-lg font-thin text-gray-300">
+                {work.description}
+              </p>
             </div>
           </div>
 
