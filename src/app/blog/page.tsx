@@ -41,16 +41,18 @@ export default async function BlogListPage() {
               <div
                 className="bg-white overflow-hidden w-full max-w-full sm:max-w-[400px] md:max-w-[550px] mx-auto 
                 transition-all hover:shadow-lg hover:scale-[1.02] 
-                border-b sm:border sm:border-black/30 rounded-2xl duration-300">
+                border-b sm:border sm:border-black/30 rounded-2xl duration-300 cursor-none">
                 {/* ✅ Blog Image */}
                 {blog.thumbnailImage && (
                   <div className="w-full aspect-[16/9] relative">
-                    <Image
-                      src={blog.thumbnailImage}
-                      alt={blog.title}
-                      fill
-                      className="object-cover rounded-t-lg"
-                    />
+                    <Link href={`${Url}/blog/${blog.slug}`}>
+                      <Image
+                        src={blog.thumbnailImage}
+                        alt={blog.title}
+                        fill
+                        className="object-cover rounded-t-lg cursor-none"
+                      />
+                    </Link>
                   </div>
                 )}
 

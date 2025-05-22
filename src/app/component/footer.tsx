@@ -3,7 +3,7 @@ import React from "react";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-neutral-900 p-6 sm:p-10 cursor-none">
+    <footer className="bg-neutral-900 p-6 pb-10 sm:p-10 cursor-none">
       <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4 sm:gap-6">
         {/* Left Side: Heading */}
         <div className="text-left">
