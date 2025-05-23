@@ -3,6 +3,23 @@ import Link from "next/link";
 import { client } from "@/sanity/lib/client";
 import ShareButton from "./sharebutton";
 import ScrollAnimation from "../component/ScrollAnimation";
+import { Metadata } from "next";
+
+export async function generateMetadata(): Promise<Metadata> {
+  // Yahan slug ke basis pe project data fetch karo
+  return {
+    title: "Taha Najam - Blogs",
+    description: "Explore the creative work and projects of Taha Najam.",
+    openGraph: {
+      title: "Taha Najam - Blogs",
+      description: "Explore the creative work and projects of Taha Najam.",
+      images: ["/images/og-image.png"],
+    },
+    twitter: {
+      card: "summary_large_image",
+    },
+  };
+}
 
 interface Blog {
   title: string;

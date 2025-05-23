@@ -7,7 +7,6 @@ import {
 } from "@portabletext/react";
 import { Metadata } from "next";
 import LikeButton from "../like";
-import CommentSection from "../comments";
 import { dataset, projectId } from "@/sanity/env";
 import Link from "next/link";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
@@ -115,7 +114,9 @@ const components: PortableTextComponents = {
   },
   list: {
     bullet: ({ children }) => (
-      <ul className="list-disc list-inside ml-4 my-5 space-y-2 leading-loose">{children}</ul>
+      <ul className="list-disc list-inside ml-4 my-5 space-y-2 leading-loose">
+        {children}
+      </ul>
     ),
     number: ({ children }) => (
       <ol className="list-decimal list-inside ml-4 my-5 space-y-2 leading-loose">
@@ -200,7 +201,8 @@ export default async function BlogDetailPage({ params }: Props) {
               />
             </div>
           )}
-          <br /><br />
+          <br />
+          <br />
 
           {/* ✅ Blog Content */}
           <div className="mt-6 text-black cursor-none">
@@ -254,7 +256,6 @@ export default async function BlogDetailPage({ params }: Props) {
 
       {/* ✅ Recent Posts & Comments */}
       <RecentPosts />
-      <CommentSection postId={params.slug} />
     </div>
   );
 }

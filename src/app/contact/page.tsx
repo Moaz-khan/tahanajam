@@ -27,9 +27,9 @@ function Page() {
 
             <div className="pt-10 cursor-none">
               <Link
-                href="tel:+447553296029"
+                href="tel:+447428698718"
                 className="block text-lg sm:text-xl md:text-2xl text-gray-500 hover:text-white duration-150 cursor-none">
-                {`+44 7553 296029`}
+                {`+44 7428 698718`}
               </Link>
               <Link
                 href="mailto:hello@tahanajam.co"

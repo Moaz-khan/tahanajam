@@ -18,9 +18,9 @@ const Footer: React.FC = () => {
         {/* Contact Section */}
         <div className="text-right">
           <Link
-            href="tel:+447553296029"
+            href="tel:+447428698718"
             className="text-white text-sm sm:text-lg font-normal hover:text-gray-400 transition cursor-none">
-            +44 7553 296029
+            +44 7428 698718
           </Link>
           <br />
           <Link
@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
         {/* Social Links */}
         <div>
           <Link
-            href="https://www.linkedin.com/in/tahanajam"
+            href="https://www.linkedin.com/in/taha-najam-designer/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white text-sm sm:text-lg font-normal hover:text-gray-400 transition cursor-none">

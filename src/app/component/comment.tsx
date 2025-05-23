@@ -85,7 +85,7 @@ function TopComments() {
             <div className="absolute inset-0 flex items-center justify-center">
               <Image
                 src={comments[currentIndex].image}
-                alt="Carousel Image"
+                alt="reviews"
                 width={800}
                 height={600}
                 quality={100}
