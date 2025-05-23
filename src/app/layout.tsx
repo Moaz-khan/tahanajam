@@ -6,6 +6,7 @@ import Footer from "./component/footer";
 import { FlotingNavbar } from "./component/FlotingNavbar";
 import CustomCursor from "./component/courser";
 import Script from "next/script"; // 👈 Add this
+import ConsentBanner from "./component/ConsentBanner";
 
 // Load Google Font
 const poppins = Poppins({
@@ -86,6 +87,7 @@ export default function RootLayout({
         <FlotingNavbar />
         {children}
         <Footer />
+        <ConsentBanner />
       </body>
     </html>
   );
