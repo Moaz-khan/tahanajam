@@ -4,22 +4,43 @@ import { client } from "../../sanity/lib/client";
 export async function GET() {
   const baseUrl = "https://tahanajam.vercel.app";
 
+  // Sanity se blog slugs
   const blogs = await client.fetch(`*[_type == "blog"]{ slug }`);
 
-  // Sitemap XML generate karte hain string ke form me
+  // 🔥 Manually defined Work slugs
+  const workSlugs = [
+    "fynix",
+    "coinio",
+    "emaildesignportfolio",
+    "ovendelights",
+    " morphosys",
+    "ascp",
+    "inhancejeweles",
+    "althunayan",
+  ];
+
+  // Static & dynamic URLs combine karo
   const urls = [
     { loc: baseUrl, lastmod: new Date().toISOString() },
     { loc: `${baseUrl}/about`, lastmod: new Date().toISOString() },
     { loc: `${baseUrl}/contact`, lastmod: new Date().toISOString() },
     { loc: `${baseUrl}/work`, lastmod: new Date().toISOString() },
     { loc: `${baseUrl}/blog`, lastmod: new Date().toISOString() },
+
+    // ✅ Add Work Detail Pages
+    ...workSlugs.map((slug) => ({
+      loc: `${baseUrl}/work/${slug}`,
+      lastmod: new Date().toISOString(),
+    })),
+
+    // ✅ Add Blog Detail Pages
     ...blogs.map((b: { slug: { current: string } }) => ({
       loc: `${baseUrl}/blog/${b.slug.current}`,
       lastmod: new Date().toISOString(),
     })),
   ];
 
-  // XML string banate hain
+  // Generate XML
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     ${urls
