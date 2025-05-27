@@ -11,7 +11,8 @@ import ConsentBanner from "./component/ConsentBanner";
 // Load Google Font
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
+  weight: ["400", "600"],
+  display: "swap", // 👈 Add this for better loading
   variable: "--font-poppins",
 });
 

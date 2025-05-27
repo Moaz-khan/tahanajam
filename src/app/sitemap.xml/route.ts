@@ -2,7 +2,7 @@
 import { client } from "../../sanity/lib/client";
 
 export async function GET() {
-  const baseUrl = "https://tahanajam.vercel.app";
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
   // Sanity se blog slugs
   const blogs = await client.fetch(`*[_type == "blog"]{ slug }`);
