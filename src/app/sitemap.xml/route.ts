@@ -22,20 +22,20 @@ export async function GET() {
   // Static & dynamic URLs combine karo
   const urls = [
     { loc: baseUrl, lastmod: new Date().toISOString() },
-    { loc: `${baseUrl}/about`, lastmod: new Date().toISOString() },
-    { loc: `${baseUrl}/contact`, lastmod: new Date().toISOString() },
-    { loc: `${baseUrl}/work`, lastmod: new Date().toISOString() },
-    { loc: `${baseUrl}/blog`, lastmod: new Date().toISOString() },
+    { loc: `${baseUrl}about`, lastmod: new Date().toISOString() },
+    { loc: `${baseUrl}contact`, lastmod: new Date().toISOString() },
+    { loc: `${baseUrl}work`, lastmod: new Date().toISOString() },
+    { loc: `${baseUrl}blog`, lastmod: new Date().toISOString() },
 
     // ✅ Add Work Detail Pages
     ...workSlugs.map((slug) => ({
-      loc: `${baseUrl}/work/${slug}`,
+      loc: `${baseUrl}work/${slug}`,
       lastmod: new Date().toISOString(),
     })),
 
     // ✅ Add Blog Detail Pages
     ...blogs.map((b: { slug: { current: string } }) => ({
-      loc: `${baseUrl}/blog/${b.slug.current}`,
+      loc: `${baseUrl}blog/${b.slug.current}`,
       lastmod: new Date().toISOString(),
     })),
   ];
