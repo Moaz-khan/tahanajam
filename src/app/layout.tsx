@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   description:
     "Premium design services for clients in the UK, USA, and beyond.",
   icons: {
-    icon: "/images/favicon.ico",
+    icon: "/favicon.ico",
   },
 };
 
