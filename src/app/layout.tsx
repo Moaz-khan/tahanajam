@@ -1,3 +1,5 @@
+// app/layout.tsx
+
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
@@ -5,23 +7,24 @@ import Navbar from "./component/navbar";
 import Footer from "./component/footer";
 import { FlotingNavbar } from "./component/FlotingNavbar";
 import CustomCursor from "./component/courser";
-import Script from "next/script"; // 👈 Add this
+import Script from "next/script";
 import ConsentBanner from "./component/ConsentBanner";
+import Head from "next/head"; // ✅ Required for custom meta tags
 
-// Load Google Font
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "600"],
-  display: "swap", // 👈 Add this for better loading
+  display: "swap",
   variable: "--font-poppins",
 });
 
-// Metadata for Next.js
 export const metadata: Metadata = {
   title: "Taha Najam - Freelance Graphic Designer - UK & USA",
   description:
     "Premium design services for clients in the UK, USA, and beyond.",
-  icons: "/images/favicon.ico",
+  icons: {
+    icon: "/images/favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -29,12 +32,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const siteURL = process.env.NEXT_PUBLIC_BASE_URL;
+  const siteURL =
+    process.env.NEXT_PUBLIC_BASE_URL || "https://www.tahanajam.co/";
 
   return (
     <html lang="en">
-      <head>
-        {/* Open Graph Meta */}
+      <Head>
+        {/* ✅ Viewport Meta */}
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {/* ✅ Open Graph Meta */}
         <meta
           property="og:title"
           content="Taha Najam - Freelance Graphic Designer - UK & USA"
@@ -47,7 +54,7 @@ export default function RootLayout({
         <meta property="og:url" content={siteURL} />
         <meta property="og:image" content={`${siteURL}/images/og-image.png`} />
 
-        {/* Twitter Card Meta */}
+        {/* ✅ Twitter Card Meta */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
@@ -59,13 +66,14 @@ export default function RootLayout({
         />
         <meta name="twitter:image" content={`${siteURL}/images/og-image.png`} />
 
-        {/* Optional Extras */}
+        {/* ✅ Extras */}
         <meta name="theme-color" content="#000000" />
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="icon" href="/images/favicon.ico" />
-      </head>
+      </Head>
+
       <body className={`${poppins.variable} antialiased cursor-none`}>
-        {/* 👉 Google Analytics Scripts */}
+        {/* ✅ Google Analytics */}
         <Script
           strategy="afterInteractive"
           src="https://www.googletagmanager.com/gtag/js?id=G-LHXYX6WED2"
@@ -83,6 +91,7 @@ export default function RootLayout({
           }}
         />
 
+        {/* Components */}
         <CustomCursor />
         <Navbar />
         <FlotingNavbar />
