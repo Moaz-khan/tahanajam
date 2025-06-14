@@ -69,7 +69,6 @@ export default function RootLayout({
         {/* ✅ Extras */}
         <meta name="theme-color" content="#000000" />
         <link rel="manifest" href="/site.webmanifest" />
-        <link rel="icon" href="/images/favicon.ico" />
       </Head>
 
       <body className={`${poppins.variable} antialiased cursor-none`}>
