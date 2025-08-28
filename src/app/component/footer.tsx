@@ -24,6 +24,13 @@ const Footer: React.FC = () => {
           </Link>
           <br />
           <Link
+            href="https://calendly.com/hello-tahanajam/30min"
+            target="_blank"
+            className="text-white text-sm sm:text-lg font-normal hover:text-gray-400 transition cursor-none">
+            Book a Call
+          </Link>
+          <br />
+          <Link
             href="mailto:hello@tahanajam.co"
             className="text-white text-sm sm:text-lg font-normal hover:text-gray-400 transition cursor-none">
             hello@tahanajam.co

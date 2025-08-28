@@ -32,6 +32,12 @@ function Page() {
                 {`+44 7428 698718`}
               </Link>
               <Link
+                href="https://calendly.com/hello-tahanajam/30min"
+                target="_blank"
+                className="block text-lg sm:text-xl md:text-2xl text-gray-500 hover:text-white duration-150 cursor-none">
+                {`Book a Call`}
+              </Link>
+              <Link
                 href="mailto:hello@tahanajam.co"
                 className="block text-lg sm:text-xl md:text-2xl text-gray-500 hover:text-white duration-150 mt-2 cursor-none">
                 {`hello@tahanajam.co`}
