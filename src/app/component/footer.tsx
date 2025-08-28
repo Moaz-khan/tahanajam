@@ -4,7 +4,7 @@ import React from "react";
 const Footer: React.FC = () => {
   return (
     <footer className="bg-neutral-900 p-6 pb-10 sm:p-10 cursor-none">
-      <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4 sm:gap-6">
+      <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-6">
         {/* Left Side: Heading */}
         <div className="text-left">
           <h1 className="text-white text-base sm:text-lg font-medium">
@@ -16,24 +16,25 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Contact Section */}
-        <div className="text-right">
+        <div className="text-right flex flex-col items-end gap-2">
           <Link
             href="tel:+447428698718"
             className="text-white text-sm sm:text-lg font-normal hover:text-gray-400 transition cursor-none">
             +44 7428 698718
           </Link>
-          <br />
-          <Link
-            href="https://calendly.com/hello-tahanajam/30min"
-            target="_blank"
-            className="text-white text-sm sm:text-lg font-normal hover:text-gray-400 transition cursor-none">
-            Book a Call
-          </Link>
-          <br />
           <Link
             href="mailto:hello@tahanajam.co"
             className="text-white text-sm sm:text-lg font-normal hover:text-gray-400 transition cursor-none">
             hello@tahanajam.co
+          </Link>
+
+          {/* ✅ Book a Call Button */}
+          <Link
+            href="https://calendly.com/hello-tahanajam/30min"
+            target="_blank">
+            <button className="mt-4 bg-white text-black px-6 py-2 rounded-full text-sm sm:text-lg font-medium hover:bg-gray-200 transition cursor-none">
+              Book a Call
+            </button>
           </Link>
         </div>
 
